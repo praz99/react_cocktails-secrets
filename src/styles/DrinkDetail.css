@@ -1,0 +1,33 @@
+.details-container {
+  display: flex;
+  justify-content: center;
+  background-color: #bb7b3b;
+  padding: 10px 0;
+  height: calc(100vh - 80px);
+}
+
+.details-image-container {
+  width: 45%;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+.details-image {
+  border-radius: 8px;
+  width: 95%;
+}
+
+.details-description {
+  border: 3px solid red;
+  border-radius: 8px;
+  background-color: #dad557d9;
+  width: 45%;
+  margin-left: 10px;
+  padding: 20px;
+}
+
+.detail-fields {
+  background-color: #bb7b3b;
+  padding: 5px 0 5px 15px;
+  margin: 4px 0;
+}
