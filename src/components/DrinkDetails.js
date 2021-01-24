@@ -16,21 +16,6 @@ const DrinkDetail = () => {
     fetchDetail();
   }, []);
 
-  const ingredients = [];
-  const quantity = [];
-
-  if (!isLoading) {
-    Object.entries(recipe).forEach(([key, value]) => {
-      if (key.includes('strIngredient') && value) {
-        const ingredient = value.split('');
-        ingredient[0] = ingredient[0].toUpperCase();
-        ingredients.push(ingredient.join(''));
-      } else if (key.includes('strMeasure') && value) {
-        quantity.push(value);
-      }
-    });
-  }
-
   return (
     detail.drinks.map(drink => (
       <div className="details-container" key={drink.idDrink}>
