@@ -1,9 +1,9 @@
-import DrinkList from '../containers/DrinkList';
+import DrinkDetails from './DrinkDetails';
 
 const App = () => (
   <div className="App">
     <h1>Hello World</h1>
-    <DrinkList />
+    <DrinkDetails />
   </div>
 );
 
