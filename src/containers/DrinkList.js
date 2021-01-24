@@ -21,10 +21,6 @@ const DrinkList = () => {
   return (
     <div className="drink-list">
       {data.drinks.map(drink => (<Drink key={drink.idDrink} drink={drink} />))}
-      {/* <div className="drink-single" key={item.idDrink}>
-        <img className="drink-image" src={item.strDrinkThumb} alt="..." />
-        {item.strDrink}
-      </div> */}
     </div>
   );
 };

@@ -1,0 +1,21 @@
+.drink-container {
+  height: 50vh;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  border: 3px solid red;
+  border-radius: 8px;
+}
+
+.drink-bottom {
+  display: flex;
+}
+
+.drink-name {
+  color: white;
+  font-weight: 700;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 5px;
+  margin: 10px;
+}
