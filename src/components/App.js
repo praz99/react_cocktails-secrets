@@ -1,18 +1,12 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import Catalogue from '../containers/Catalogue';
-import DrinkDetails from '../components/DrinkDetails';
+import DrinkList from '../containers/DrinkList';
 import BrowseIndex from './BrowseIndex';
+import Footer from '../layouts/Footer';
 
 const App = () => (
   <>
     <BrowseIndex />
-    <Route exact path="/">
-      <Catalogue />
-    </Route>
-    <Route exact path="/:id">
-      <DrinkDetails />
-    </Route>
+    <DrinkList />
     <Footer />
   </>
 );
