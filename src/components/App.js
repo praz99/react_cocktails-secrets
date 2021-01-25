@@ -1,8 +1,8 @@
-import DrinkDetails from './DrinkDetails';
+import DrinkList from '../containers/DrinkList';
 
 const App = () => (
   <div className="App">
-    <DrinkDetails />
+    <DrinkList />
   </div>
 );
 
