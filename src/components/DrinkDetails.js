@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import { API_MAIN, API_DETAIL } from '../constants/api';
 import '../styles/DrinkDetail.css';
 
 const DrinkDetail = () => {
   const [detail, setDetail] = useState({ drinks: [] });
 
+  const { id } = useParams();
+
   useEffect(() => {
     const fetchDetail = async () => {
       const result = await axios(
-        'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=17222',
+        `${API_MAIN}${API_DETAIL}${id}`,
       );
 
       setDetail(result.data);
@@ -20,15 +24,15 @@ const DrinkDetail = () => {
   const ingredients = [];
   const quantity = [];
 
-  Object.entries(detail.drinks).forEach(([key, value]) => {
-    if (key.includes('strIngredient') && value) {
-      const ingredient = value.split('');
-      ingredient[0] = ingredient[0].toUpperCase();
-      ingredients.push(ingredient.join(''));
-    } else if (key.includes('strMeasure') && value) {
-      quantity.push(value);
-    }
-  });
+  // Object.entries(detail.drinks).forEach(([key, value]) => {
+  //   if (key.includes('strIngredient') && value) {
+  //     const ingredient = value.split('');
+  //     ingredient[0] = ingredient[0].toUpperCase();
+  //     ingredients.push(ingredient.join(''));
+  //   } else if (key.includes('strMeasure') && value) {
+  //     quantity.push(value);
+  //   }
+  // });
 
   return (
     detail.drinks.map(drink => (

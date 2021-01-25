@@ -5,7 +5,7 @@ import '../styles/Drink.css';
 
 const Drink = ({ drink }) => (
   <div className="drink-container" style={{ backgroundImage: `url(${drink.strDrinkThumb})` }}>
-    <Link to="/details" className="drink-button">{drink.strDrink}</Link>
+    <Link to={`/details/${drink.idDrink}`} className="drink-button">{drink.strDrink}</Link>
   </div>
 );
 
