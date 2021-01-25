@@ -4,10 +4,7 @@ import '../styles/Drink.css';
 
 const Drink = ({ drink }) => (
   <div className="drink-container" style={{ backgroundImage: `url(${drink.strDrinkThumb})` }}>
-    <div className="drink-bottom">
-      <div className="drink-name">{drink.strDrink}</div>
-      <button type="button">See Details</button>
-    </div>
+    <button className="drink-button" type="button">{drink.strDrink}</button>
   </div>
 );
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Drink from '../components/Drink';
-import { API_MAIN, API_SEARCH } from '../source-api/api';
+import { API_MAIN, API_SEARCH } from '../constants/api';
 import '../styles/DrinkList.css';
 
 const DrinkList = () => {

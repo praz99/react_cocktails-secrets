@@ -7,15 +7,17 @@
   border-radius: 8px;
 }
 
-.drink-bottom {
-  display: flex;
-}
-
-.drink-name {
+.drink-button {
+  background: #00000074;
   color: white;
   font-weight: 700;
   border: 2px solid red;
   border-radius: 8px;
   padding: 5px;
   margin: 10px;
+  width: 100%;
+}
+
+.drink-button:hover {
+  background: #000000ce;
 }
