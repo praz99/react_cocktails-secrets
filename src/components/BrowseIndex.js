@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/BrowseIndex.css';
 
 const BrowseIndex = () => (
   <div className="browse-index-container">
