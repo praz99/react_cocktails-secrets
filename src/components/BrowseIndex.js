@@ -9,6 +9,11 @@ const useQuery = () => new URLSearchParams(useLocation().search);
 
 const BrowseIndex = () => {
   const query = useQuery();
+  let search = query.get('f');
+  if (!search) {
+    search = 'a';
+  }
+
   return (
     <>
       <div className="browse-index-container">
@@ -21,7 +26,7 @@ const BrowseIndex = () => {
           )) }
         </ul>
       </div>
-      <DrinkList search={query.get('f')} />
+      <DrinkList search={search} />
     </>
   );
 };
