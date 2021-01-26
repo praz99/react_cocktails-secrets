@@ -1,7 +1,10 @@
 const INITIAL_STATE = {
-  drinks: [],
-  loading: false,
-  url: '',
+  data:
+    {
+      drinks: [],
+      isLoading: false,
+      isError: false,
+    }
 };
 
 export default INITIAL_STATE;
