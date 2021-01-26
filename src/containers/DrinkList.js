@@ -7,23 +7,32 @@ import '../styles/DrinkList.css';
 
 const DrinkList = ({ search }) => {
   const [data, setData] = useState({ drinks: [] });
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
       const result = await axios(
         `${API_MAIN}${API_SEARCH}${search}`,
       );
 
       setData(result.data);
+      setIsLoading(false);
     };
 
     fetchData();
   }, [search]);
 
   return (
-    <div className="drink-list">
-      {data.drinks.map(drink => (<Drink key={drink.idDrink} drink={drink} />))}
-    </div>
+    <>
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <div className="drink-list">
+          {data.drinks.map(drink => (<Drink key={drink.idDrink} drink={drink} />))}
+        </div>
+      )}
+    </>
   );
 };
 
