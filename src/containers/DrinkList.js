@@ -8,15 +8,20 @@ import '../styles/DrinkList.css';
 const DrinkList = ({ search }) => {
   const [data, setData] = useState({ drinks: [] });
   const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
+      setIsError(false);
       setIsLoading(true);
-      const result = await axios(
-        `${API_MAIN}${API_SEARCH}${search}`,
-      );
-
-      setData(result.data);
+      try {
+        const result = await axios(
+          `${API_MAIN}${API_SEARCH}${search}`,
+        );
+        setData(result.data);
+      } catch (error) {
+        setIsError(true);
+      }
       setIsLoading(false);
     };
 
@@ -25,6 +30,7 @@ const DrinkList = ({ search }) => {
 
   return (
     <>
+      {isError && <div>Something went wrong ...</div>}
       {isLoading ? (
         <div>Loading...</div>
       ) : (
