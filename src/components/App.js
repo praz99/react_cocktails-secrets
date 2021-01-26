@@ -6,7 +6,7 @@ import Footer from '../layouts/Footer';
 const App = () => (
   <>
     <BrowseIndex />
-    <DrinkList />
+    {/* <DrinkList /> */}
     <Footer />
   </>
 );
