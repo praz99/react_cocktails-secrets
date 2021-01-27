@@ -4,7 +4,7 @@ const INITIAL_STATE = {
       drinks: [],
       isLoading: false,
       isError: false,
-    }
+    },
 };
 
 export default INITIAL_STATE;

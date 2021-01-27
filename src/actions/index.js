@@ -15,4 +15,11 @@ const dataFetchFailure = () => ({
   type: FETCH_FAILURE,
 });
 
-export { FETCH_START, FETCH_FAILURE, FETCH_SUCCESS, dataFetchStart, dataFetchSuccess, dataFetchFailure };
+export {
+  FETCH_START,
+  FETCH_FAILURE,
+  FETCH_SUCCESS,
+  dataFetchStart,
+  dataFetchSuccess,
+  dataFetchFailure,
+};
