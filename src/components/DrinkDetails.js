@@ -31,15 +31,18 @@ const DrinkDetail = ({
   const ingredients = [];
   const quantity = [];
 
-  // Object.entries(detail.drinks).forEach(([key, value]) => {
-  //   if (key.includes('strIngredient') && value) {
-  //     const ingredient = value.split('');
-  //     ingredient[0] = ingredient[0].toUpperCase();
-  //     ingredients.push(ingredient.join(''));
-  //   } else if (key.includes('strMeasure') && value) {
-  //     quantity.push(value);
-  //   }
-  // });
+  if (drinks && drinks.length) {
+    const drink = drinks[0];
+    Object.entries(drink).forEach(([key, value]) => {
+      if (key.includes('strIngredient') && value) {
+        const ingredient = value.split('');
+        ingredient[0] = ingredient[0].toUpperCase();
+        ingredients.push(ingredient.join(''));
+      } else if (key.includes('strMeasure') && value) {
+        quantity.push(value);
+      }
+    });
+  }
 
   return (
     <>
