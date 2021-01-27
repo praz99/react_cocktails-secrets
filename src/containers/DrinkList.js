@@ -1,28 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Drink from '../components/Drink';
 import { API_MAIN, API_SEARCH } from '../constants/api';
+import { dataFetchStart, dataFetchSuccess, dataFetchFailure } from '../actions/index';
 import '../styles/DrinkList.css';
 
-const DrinkList = ({ search }) => {
-  const [data, setData] = useState({ drinks: [] });
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-
+const DrinkList = ({
+  fetchStart, fetchSuccess, fetchFailure, drinks, isLoading, isError, search,
+}) => {
   useEffect(() => {
     const fetchData = async () => {
-      setIsError(false);
-      setIsLoading(true);
+      fetchStart();
       try {
         const result = await axios(
           `${API_MAIN}${API_SEARCH}${search}`,
         );
-        setData(result.data);
+        fetchSuccess(result.data);
       } catch (error) {
-        setIsError(true);
+        fetchFailure();
       }
-      setIsLoading(false);
     };
 
     fetchData();
@@ -35,7 +33,7 @@ const DrinkList = ({ search }) => {
         <div>Loading...</div>
       ) : (
         <div className="drink-list">
-          {data.drinks.map(drink => (<Drink key={drink.idDrink} drink={drink} />))}
+          {drinks.map(drink => (<Drink key={drink.idDrink} drink={drink} />))}
         </div>
       )}
     </>
@@ -43,7 +41,32 @@ const DrinkList = ({ search }) => {
 };
 
 DrinkList.propTypes = {
+  fetchStart: PropTypes.func.isRequired,
+  fetchSuccess: PropTypes.func.isRequired,
+  fetchFailure: PropTypes.func.isRequired,
+  drinks: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  isError: PropTypes.bool,
+  isLoading: PropTypes.bool,
   search: PropTypes.string.isRequired,
+
 };
 
-export default DrinkList;
+DrinkList.defaultProps = {
+  drinks: [],
+  isError: false,
+  isLoading: false,
+};
+
+const mapStateToProps = state => ({
+  drinks: state.data.drinks,
+  isLoading: state.data.isLoading,
+  isError: state.data.isError,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchStart: () => dispatch(dataFetchStart()),
+  fetchSuccess: data => dispatch(dataFetchSuccess(data)),
+  fetchFailure: () => dispatch(dataFetchFailure()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(DrinkList);
