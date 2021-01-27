@@ -16,6 +16,19 @@ const dataFetchFailure = () => ({
   type: FETCH_FAILURE,
 });
 
+const detailsFetchStart = () => ({
+  type: FETCH_START,
+});
+
+const detailsFetchSuccess = data => ({
+  type: FETCH_SUCCESS,
+  payload: data.drinks,
+});
+
+const detailsFetchFailure = () => ({
+  type: FETCH_FAILURE,
+});
+
 const changeCategoryAction = category => ({
   type: CHANGE_FILTER,
   category,
@@ -29,5 +42,8 @@ export {
   dataFetchStart,
   dataFetchSuccess,
   dataFetchFailure,
+  detailsFetchStart,
+  detailsFetchSuccess,
+  detailsFetchFailure,
   changeCategoryAction,
 };

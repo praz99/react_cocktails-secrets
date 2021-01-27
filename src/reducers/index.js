@@ -1,10 +1,12 @@
 import { createStore, combineReducers } from 'redux';
 import drinkFetchReducer from './drinkReducer';
 import categoriesReducer from './categoriesReducer';
+import detailsReducer from './detailsReducder';
 import INITIAL_STATE from '../constants/initialState';
 
 const rootReducer = combineReducers({
   data: drinkFetchReducer,
+  details: detailsReducer,
   categories: categoriesReducer,
 });
 

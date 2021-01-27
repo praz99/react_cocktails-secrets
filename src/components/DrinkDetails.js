@@ -1,21 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { detailsFetchStart, detailsFetchSuccess, detailsFetchFailure } from '../actions/index';
 import { API_MAIN, API_DETAIL } from '../constants/api';
 import '../styles/DrinkDetail.css';
 
-const DrinkDetail = () => {
-  const [detail, setDetail] = useState({ drinks: [] });
-
+const DrinkDetail = ({
+  fetchStart, fetchSuccess, fetchFailure, drinks, isLoading, isError,
+}) => {
   const { id } = useParams();
 
   useEffect(() => {
     const fetchDetail = async () => {
-      const result = await axios(
-        `${API_MAIN}${API_DETAIL}${id}`,
-      );
-
-      setDetail(result.data);
+      fetchStart();
+      try {
+        const result = await axios(
+          `${API_MAIN}${API_DETAIL}${id}`,
+        );
+        fetchSuccess(result.data);
+      } catch (error) {
+        fetchFailure();
+      }
     };
 
     fetchDetail();
@@ -35,50 +42,84 @@ const DrinkDetail = () => {
   // });
 
   return (
-    detail.drinks.map(drink => (
-      <div className="details-container" key={drink.idDrink}>
-        <div className="details-image-container">
-          <img className="details-image" src={drink.strDrinkThumb} alt={drink.strDrink} />
-        </div>
-        <div className="details-description">
-          <h1 className="drink-name detail-fields">{drink.strDrink}</h1>
-          <p className="detail-fields">
-            Category:
-            {' '}
-            {drink.strCategory}
-          </p>
-          <p className="detail-fields">
-            Service Glass:
-            {' '}
-            {drink.strGlass}
-          </p>
-          <table className="details-table">
-            <thead>
-              <tr>
-                <th aria-label="blank" />
-                <th>Ingredients</th>
-                <th>Quantity</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                ingredients.map((ingredient, i) => (
-                  <tr className="row" key={`${ingredient}-${i + 1}`}>
-                    <td>{ingredient}</td>
-                    <td>{quantity[i]}</td>
+    <>
+      {isError && <div>Someting went wrong. Please try again...</div>}
+      {isLoading ? (
+        <div>Loading details...</div>
+      ) : (
+        drinks.map(drink => (
+          <div className="details-container" key={drink.idDrink}>
+            <div className="details-image-container">
+              <img className="details-image" src={drink.strDrinkThumb} alt={drink.strDrink} />
+            </div>
+            <div className="details-description">
+              <h1 className="drink-name detail-fields">{drink.strDrink}</h1>
+              <p className="detail-fields">
+                Category:
+                {' '}
+                {drink.strCategory}
+              </p>
+              <p className="detail-fields">
+                Service Glass:
+                {' '}
+                {drink.strGlass}
+              </p>
+              <table className="details-table">
+                <thead>
+                  <tr>
+                    <th aria-label="blank" />
+                    <th>Ingredients</th>
+                    <th>Quantity</th>
                   </tr>
-                ))
-              }
-            </tbody>
-          </table>
-          <div className="instructions">
-            <h3>Preparation</h3>
-            {drink.strInstructions}
+                </thead>
+                <tbody>
+                  {
+                    ingredients.map((ingredient, i) => (
+                      <tr className="row" key={`${ingredient}-${i + 1}`}>
+                        <td>{ingredient}</td>
+                        <td>{quantity[i]}</td>
+                      </tr>
+                    ))
+                  }
+                </tbody>
+              </table>
+              <div className="instructions">
+                <h3>Preparation</h3>
+                {drink.strInstructions}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    ))
+        ))
+      )}
+    </>
   );
 };
 
-export default DrinkDetail;
+DrinkDetail.propTypes = {
+  fetchStart: PropTypes.func.isRequired,
+  fetchSuccess: PropTypes.func.isRequired,
+  fetchFailure: PropTypes.func.isRequired,
+  drinks: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  isError: PropTypes.bool,
+  isLoading: PropTypes.bool,
+};
+
+DrinkDetail.defaultProps = {
+  drinks: [],
+  isError: false,
+  isLoading: false,
+};
+
+const mapStateToProps = state => ({
+  drinks: state.details.drinks,
+  isLoading: state.details.isLoading,
+  isError: state.details.isError,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchStart: () => dispatch(detailsFetchStart()),
+  fetchSuccess: details => dispatch(detailsFetchSuccess(details)),
+  fetchFailure: () => dispatch(detailsFetchFailure()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(DrinkDetail);

@@ -41,7 +41,7 @@ const DrinkList = ({
 
   return (
     <>
-      {isError && <div>Something went wrong ...</div>}
+      {isError && <div>Something went wrong. Please try again...</div>}
       {isLoading ? (
         <div>Loading...</div>
       ) : (
