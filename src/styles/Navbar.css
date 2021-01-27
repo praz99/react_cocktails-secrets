@@ -1,0 +1,16 @@
+.navbar-container {
+  width: 30%;
+}
+
+.banner {
+  font-size: 3rem;
+  color: #45cccc;
+  letter-spacing: 1px;
+}
+
+.slogan {
+  font-size: 10px;
+  text-align: right;
+  width: 80%;
+  color: #6b0646;
+}
