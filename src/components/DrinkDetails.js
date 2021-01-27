@@ -70,7 +70,7 @@ const DrinkDetail = ({
               <table className="details-table">
                 <thead>
                   <tr>
-                    <th aria-label="blank" />
+                    <th aria-label="blank" className="small-col" />
                     <th>Ingredients</th>
                     <th>Quantity</th>
                   </tr>
@@ -79,6 +79,10 @@ const DrinkDetail = ({
                   {
                     ingredients.map((ingredient, i) => (
                       <tr className="row" key={`${ingredient}-${i + 1}`}>
+                        <td className="small-col">
+                          {i + 1}
+                          .
+                        </td>
                         <td>{ingredient}</td>
                         <td>{quantity[i]}</td>
                       </tr>
