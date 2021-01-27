@@ -4,6 +4,7 @@ const INITIAL_STATE = {
     isLoading: false,
     isError: false,
   },
+  categories: 'All',
 };
 
 export default INITIAL_STATE;

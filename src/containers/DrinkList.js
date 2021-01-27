@@ -3,13 +3,26 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Drink from '../components/Drink';
+import CategoryFilter from '../components/CategoryFilter';
 import { API_MAIN, API_SEARCH } from '../constants/api';
-import { dataFetchStart, dataFetchSuccess, dataFetchFailure } from '../actions/index';
+import {
+  dataFetchStart, dataFetchSuccess, dataFetchFailure, changeCategoryAction,
+} from '../actions/index';
 import '../styles/DrinkList.css';
 
 const DrinkList = ({
-  fetchStart, fetchSuccess, fetchFailure, drinks, isLoading, isError, search,
+  fetchStart,
+  fetchSuccess,
+  fetchFailure,
+  drinks,
+  isLoading,
+  isError,
+  search,
+  category,
+  changeCategory,
 }) => {
+  const handleChangeCategory = event => changeCategory(event.target.value);
+  const drinkFilter = category === 'All' ? drinks : drinks.filter(drink => drink.strCategory === category);
   useEffect(() => {
     const fetchData = async () => {
       fetchStart();
@@ -33,7 +46,8 @@ const DrinkList = ({
         <div>Loading...</div>
       ) : (
         <div className="drink-list">
-          {drinks.map(drink => (<Drink key={drink.idDrink} drink={drink} />))}
+          <CategoryFilter handleFilterChange={handleChangeCategory} />
+          {drinkFilter.map(drink => (<Drink key={drink.idDrink} drink={drink} />))}
         </div>
       )}
     </>
@@ -48,6 +62,8 @@ DrinkList.propTypes = {
   isError: PropTypes.bool,
   isLoading: PropTypes.bool,
   search: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  changeCategory: PropTypes.func.isRequired,
 
 };
 
@@ -61,12 +77,14 @@ const mapStateToProps = state => ({
   drinks: state.data.drinks,
   isLoading: state.data.isLoading,
   isError: state.data.isError,
+  category: state.categories,
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchStart: () => dispatch(dataFetchStart()),
   fetchSuccess: data => dispatch(dataFetchSuccess(data)),
   fetchFailure: () => dispatch(dataFetchFailure()),
+  changeCategory: category => dispatch(changeCategoryAction(category)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DrinkList);
