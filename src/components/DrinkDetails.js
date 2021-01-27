@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { detailsFetchStart, detailsFetchSuccess, detailsFetchFailure } from '../actions/index';
+import Navbar from '../layouts/Navbar';
+import Footer from '../layouts/Footer';
 import { API_MAIN, API_DETAIL } from '../constants/api';
 import '../styles/DrinkDetail.css';
 
@@ -46,6 +48,7 @@ const DrinkDetail = ({
 
   return (
     <>
+      <Navbar />
       {isError && <div>Someting went wrong. Please try again...</div>}
       {isLoading ? (
         <div>Loading details...</div>
@@ -98,6 +101,7 @@ const DrinkDetail = ({
           </div>
         ))
       )}
+      <Footer />
     </>
   );
 };
