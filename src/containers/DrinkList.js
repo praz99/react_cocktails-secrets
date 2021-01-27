@@ -22,7 +22,7 @@ const DrinkList = ({
   changeCategory,
 }) => {
   const handleChangeCategory = event => changeCategory(event.target.value);
-  const drinkFilter = category === 'All' ? drinks : drinks.filter(drink => drink.strCategory === category);
+  const drinkFiltered = category === 'All' ? drinks : drinks.filter(drink => drink.strCategory === category);
   useEffect(() => {
     const fetchData = async () => {
       fetchStart();
@@ -45,10 +45,16 @@ const DrinkList = ({
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        <div className="drink-list">
+        <>
           <CategoryFilter handleFilterChange={handleChangeCategory} />
-          {drinkFilter.map(drink => (<Drink key={drink.idDrink} drink={drink} />))}
-        </div>
+          {drinkFiltered && drinkFiltered.length ? (
+            <div className="drink-list">
+              {drinkFiltered.map(drink => (<Drink key={drink.idDrink} drink={drink} />))}
+            </div>
+          ) : (
+            <div>No drinks available for this category...</div>
+          )}
+        </>
       )}
     </>
   );
