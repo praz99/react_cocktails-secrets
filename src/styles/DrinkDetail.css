@@ -1,9 +1,24 @@
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(119, 114, 114);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(99, 99, 99); 
+}
+
 .details-container {
   display: flex;
   justify-content: center;
   background-color: #bb7b3b;
   padding: 10px 0;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 200px);
 }
 
 .details-image-container {
@@ -14,7 +29,7 @@
 
 .details-image {
   border-radius: 8px;
-  width: 95%;
+  width: 75%;
 }
 
 .details-description {
@@ -24,6 +39,7 @@
   width: 45%;
   margin-left: 10px;
   padding: 20px;
+  overflow:  auto;
 }
 
 .detail-fields {
@@ -45,4 +61,12 @@ th:first-child {
 
 .small-col {
   width: 5%;
+}
+
+.last-col {
+  width: 50%;
+}
+
+.instructions {
+  overflow: auto;
 }

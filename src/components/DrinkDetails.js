@@ -74,7 +74,7 @@ const DrinkDetail = ({
                 <thead>
                   <tr>
                     <th aria-label="blank" className="small-col" />
-                    <th>Ingredients</th>
+                    <th className="last-col">Ingredients</th>
                     <th>Quantity</th>
                   </tr>
                 </thead>
@@ -86,7 +86,7 @@ const DrinkDetail = ({
                           {i + 1}
                           .
                         </td>
-                        <td>{ingredient}</td>
+                        <td className="last-col">{ingredient}</td>
                         <td>{quantity[i]}</td>
                       </tr>
                     ))
