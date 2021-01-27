@@ -22,7 +22,17 @@ const DrinkList = ({
   changeCategory,
 }) => {
   const handleChangeCategory = event => changeCategory(event.target.value);
-  const drinkFiltered = category === 'All' ? drinks : drinks.filter(drink => drink.strCategory === category);
+
+  let drinkFiltered;
+
+  if (drinks === null) {
+    drinkFiltered = null;
+  } else if (category === 'All') {
+    drinkFiltered = drinks;
+  } else {
+    drinkFiltered = drinks.filter(drink => drink.strCategory === category);
+  }
+
   useEffect(() => {
     const fetchData = async () => {
       fetchStart();
@@ -52,7 +62,7 @@ const DrinkList = ({
               {drinkFiltered.map(drink => (<Drink key={drink.idDrink} drink={drink} />))}
             </div>
           ) : (
-            <div>No drinks available for this category...</div>
+            <div>No drinks available for this category... Please try another one.</div>
           )}
         </>
       )}
