@@ -4,10 +4,13 @@ import selectCategories from '../constants/categories';
 import '../styles/CategoryFilter.css';
 
 const CategoryFilter = ({ handleFilterChange }) => (
-  <select onChange={handleFilterChange} name="category" className="category-select">
-    <option value="All">All</option>
-    {selectCategories}
-  </select>
+  <div className="category-select-container">
+    <span className="category-span">Find by Category</span>
+    <select onChange={handleFilterChange} name="category" className="category-select">
+      <option value="All">All</option>
+      {selectCategories}
+    </select>
+  </div>
 );
 
 CategoryFilter.propTypes = {

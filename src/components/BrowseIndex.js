@@ -21,7 +21,7 @@ const BrowseIndex = () => {
         <ul className="list-alphabetical">
           {ALPHABETS.map(character => (
             <li key={`${character}-1`}>
-              <Link to={`/search?f=${character}`} className="browser-index-links">{character.toUpperCase()}</Link>
+              <Link to={`/search?f=${character}`} className="browse-index-links">{character.toUpperCase()}</Link>
             </li>
           )) }
         </ul>

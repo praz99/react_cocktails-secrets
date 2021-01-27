@@ -12,8 +12,12 @@
   justify-content: center;
 }
 
-.browser-index-links {
+.browse-index-links {
   color: #000;
   text-decoration: none;
   padding: 0 5px;
+}
+
+.browse-index-links:hover {
+  color: #6b0646;
 }

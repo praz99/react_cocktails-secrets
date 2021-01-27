@@ -2,10 +2,11 @@
   width: 30%;
 }
 
-.banner {
+.banner a {
   font-size: 3rem;
   color: #45cccc;
   letter-spacing: 1px;
+  text-decoration: none;
 }
 
 .slogan {

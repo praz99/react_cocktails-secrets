@@ -1,5 +1,20 @@
-.category-select {
+.category-select-container {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 2em;
+  right: 2em;
+}
+
+.category-span {
+  font-size: 12px;
+  padding-right: 10px;
+}
+
+.category-select {
+  padding: 5px;
+  background-color: lightblue;
+}
+
+.category-select:focus-within {
+  border: none;
+  outline: none;
 }
