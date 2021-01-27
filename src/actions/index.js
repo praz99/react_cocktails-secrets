@@ -8,12 +8,11 @@ const dataFetchStart = () => ({
 
 const dataFetchSuccess = data => ({
   type: FETCH_SUCCESS,
-  data,
+  payload: data.drinks,
 });
 
-const dataFetchFailure = error => ({
+const dataFetchFailure = () => ({
   type: FETCH_FAILURE,
-  error,
 });
 
 export { FETCH_START, FETCH_FAILURE, FETCH_SUCCESS, dataFetchStart, dataFetchSuccess, dataFetchFailure };
