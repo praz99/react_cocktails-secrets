@@ -6,18 +6,18 @@ import Drink from '../../components/Drink';
 afterEach(cleanup);
 
 const drinkOne = {
-  "idDrink":"13501",
-  "strDrink":"ABC",
-  "strDrinkThumb":"https:\/\/www.thecocktaildb.com\/images\/media\/drink\/tqpvqp1472668328.jpg"
+  idDrink: '13501',
+  strDrink: 'ABC',
+  strDrinkThumb: 'https://www.thecocktaildb.com/images/media/drink/tqpvqp1472668328.jpg',
 };
 
 it('renders item component correctly', () => {
-  const drink = renderer.create(<Drink drink={drinkOne}/>).toJSON();
+  const drink = renderer.create(<Drink drink={drinkOne} />).toJSON();
   expect(drink).toMatchSnapshot();
 });
 
 it('renders a link to see drink details', () => {
-  const { getByTestId } = render(<Drink drink={drinkOne}/>);
+  const { getByTestId } = render(<Drink drink={drinkOne} />);
   const link = getByTestId('details-link');
-  expect(link.innerHTML).toMatch(drinkOne.strDrink); 
+  expect(link.innerHTML).toMatch(drinkOne.strDrink);
 });

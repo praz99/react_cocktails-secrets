@@ -2,7 +2,7 @@ import {
   dataFetchSuccess,
   dataFetchFailure,
   dataFetchStart,
-  changeCategoryAction
+  changeCategoryAction,
 } from '../../actions/index';
 
 describe('actions', () => {
@@ -13,9 +13,18 @@ describe('actions', () => {
   });
 
   describe('dataFetchSuccess', () => {
-    const data = {"drinks":[{"idDrink":"13501","strDrink":"ABC","strCategory":"Shot","strAlcoholic":"Alcoholic","strGlass":"Shot glass"}]};
+    const data = {
+      drinks: [{
+        idDrink: '13501', strDrink: 'ABC', strCategory: 'Shot', strAlcoholic: 'Alcoholic', strGlass: 'Shot glass',
+      }],
+    };
     it('returns an object with type property and payload', () => {
-      expect(dataFetchSuccess(data)).toEqual({ type: 'FETCH_SUCCESS', payload: [{"idDrink":"13501","strDrink":"ABC","strCategory":"Shot","strAlcoholic":"Alcoholic","strGlass":"Shot glass"}] });
+      expect(dataFetchSuccess(data)).toEqual({
+        type: 'FETCH_SUCCESS',
+        payload: [{
+          idDrink: '13501', strDrink: 'ABC', strCategory: 'Shot', strAlcoholic: 'Alcoholic', strGlass: 'Shot glass',
+        }],
+      });
     });
   });
 
@@ -26,7 +35,7 @@ describe('actions', () => {
   });
 
   describe('changeCategoryAction', () => {
-    const category = 'Shots'
+    const category = 'Shots';
     it('returns an object with type property and payload', () => {
       expect(changeCategoryAction(category)).toEqual({ type: 'CHANGE_FILTER', category: 'Shots' });
     });

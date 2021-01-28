@@ -2,11 +2,11 @@ import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import BrowseIndex from '../../components/BrowseIndex';
 
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
   useLocation: () => ({
-    pathname: "http://localhost:3000/search?f=d"
-  })
+    pathname: 'http://localhost:3000/search?f=d',
+  }),
 }));
 
 describe('BrowseIndex component', () => {

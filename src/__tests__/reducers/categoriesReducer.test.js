@@ -8,5 +8,5 @@ describe('categories reducer', () => {
 
   it('returns the unchanged state if there is no action type', () => {
     expect(categoriesReducer('All', { type: 'RANDOM' })).toEqual('All');
-  })
+  });
 });
