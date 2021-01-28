@@ -1,11 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 
 const Navbar = () => (
   <div className="navbar-container">
     <div className="banner">
-      <Link to="/">The CockTails</Link>
+      <a href="/" data-testid="navbar-heading">The CockTails</a>
     </div>
     <div className="slogan">
       <span>Find your drink...</span>
