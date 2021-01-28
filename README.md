@@ -61,6 +61,11 @@ $ yarn start
 
 This runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Testing
+This app has been tested using the ```react-testing-library```.
+Run ```yarn test``` in the console to run the tests.
+
 ## ✒️  Authors <a name = "author"></a>
 
 👤 **Prajwal Thapa**
