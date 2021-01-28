@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import '../styles/Drink.css';
 
 const Drink = ({ drink }) => (
   <div className="drink-container" style={{ backgroundImage: `url(${drink.strDrinkThumb})` }}>
-    <Link to={`/details/${drink.idDrink}`} className="drink-button">{drink.strDrink}</Link>
+    <a href={`/details/${drink.idDrink}`} className="drink-button" data-testid="details-link">{drink.strDrink}</a>
   </div>
 );
 
