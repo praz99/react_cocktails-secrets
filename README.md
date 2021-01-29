@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# The Cocktails DB
+
+>This the the capstone project for the react-redux module of [Microverse](https://www.microverse.org/) main technical curriculum.  
+>In this project I have fetched the data from [The Cocktails DB](https://www.thecocktaildb.com/) API and presented in the app.
+>The users can look for various drinks according to the first alphabet of its name in the main page. Also the users can use the available filters to filter the drink categories such as cocktails, ordinary drinks, shots, and others.
+>Users can see the details of a particular drink by clicking its name.
+<div align="center">
+
+[![View Code](https://img.shields.io/badge/View%20-Code-green)](https://github.com/praz99/react-capstone)
+[![Github Issues](https://img.shields.io/badge/GitHub-Issues-orange)](https://github.com/praz99/react-capstone/issues)
+[![GitHub Pull Requests](https://img.shields.io/badge/GitHub-Pull%20Requests-blue)](https://github.com/praz99/react-capstone/pulls)
+
+</div>
+
+## 📝 Contents
+
+<p align="center">
+<a href="#with">Built with</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#ll">Live Demo Link</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#gs">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#author">Author</a>
+</p>
+
+## 🔧 Built with<a name = "with"></a>
+- ReactJS
+- React-Redux
+- HTML 5 and CSS 3
+
+## Screenshots
+
+![screenshot](src/images/main_page.png)
+![screenshot](src/images/category-shot.png)
+![screenshot](src/images/detail.png)
+
+## Live Demo Link <a name = "ll"></a>
+
+## See Live
+[Heroku](https://praz-cocktailsdb.herokuapp.com/)   
+[Netlify](https://thecocktails-praz.netlify.app/)
+
+
+## Getting Started <a name = "gs"></a>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+To get a local copy of the repository please run the following commands on your terminal:
 
-In the project directory, you can run:
+```
+$ git clone git@github.com:praz99/react-capstone.git
+```
+```
+$ cd react-capstone
+```
 
-### `yarn start`
+```
+$ yarn install
+```
+```
+$ yarn start
+```
 
-Runs the app in the development mode.\
+This runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Testing
+This app has been tested using the ```react-testing-library```.
+Run ```yarn test``` in the console to run the tests.
 
-### `yarn test`
+## ✒️  Authors <a name = "author"></a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+👤 **Prajwal Thapa**
 
-### `yarn build`
+- Github: [praz99](https://github.com/praz99)
+- Twitter: [@thapa_praz](https://twitter.com/thapa_praz)
+- LinkedIn: [prazwal-thapa](https://linkedin.com/in/prazwal-thapa)
+- Email: t.prazwal@gmail.com
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🤝 Contributing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Contributions, issues and feature requests are welcome!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Feel free to check the [issues page](https://github.com/praz99/react-capstone/issues).
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 👍 Show your support
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Give a ⭐️ if you like this project!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## :clap: Acknowledgements
+- [The Cocktails DB](https://www.thecocktaildb.com/)
+- [Microverse](https://www.microverse.org/)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 📝 License
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](./LICENSE) licensed.

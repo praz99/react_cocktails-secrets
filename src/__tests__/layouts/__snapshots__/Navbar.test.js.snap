@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Navbar component correctly 1`] = `
+<div
+  className="navbar-container"
+>
+  <div
+    className="banner"
+  >
+    <a
+      data-testid="navbar-heading"
+      href="/"
+    >
+      The CockTails
+    </a>
+  </div>
+  <div
+    className="slogan"
+  >
+    <span>
+      Find your drink...
+    </span>
+    <span>
+      Learn to make
+    </span>
+    <div>
+      Enjoy!
+    </div>
+  </div>
+</div>
+`;

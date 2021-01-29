@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders item component correctly 1`] = `
+<div
+  className="drink-container"
+  style={
+    Object {
+      "backgroundImage": "url(https://www.thecocktaildb.com/images/media/drink/tqpvqp1472668328.jpg)",
+    }
+  }
+>
+  <a
+    className="drink-button"
+    data-testid="details-link"
+    href="/details/13501"
+  >
+    ABC
+  </a>
+</div>
+`;
