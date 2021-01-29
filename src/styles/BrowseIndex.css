@@ -1,0 +1,23 @@
+.browse-index-container {
+  padding: 10px;
+}
+
+.browse-index-container h3 {
+  text-align: center;
+}
+
+.list-alphabetical {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+}
+
+.browse-index-links {
+  color: #000;
+  text-decoration: none;
+  padding: 0 5px;
+}
+
+.browse-index-links:hover {
+  color: #6b0646;
+}
