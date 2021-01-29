@@ -35,13 +35,14 @@
 ## Live Demo Link <a name = "ll"></a>
 
 ## See Live
-[Heroku](https://praz-cocktailsdb.herokuapp.com/)   
-[Netlify](https://thecocktails-praz.netlify.app/)
+See live on [Heroku](https://praz-cocktailsdb.herokuapp.com/)
 
 
 ## Getting Started <a name = "gs"></a>
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Make sure you have [Node](https://nodejs.org/en/), installed in your computer.   
+Install [yarn](https://yarnpkg.com/getting-started/install). (or you can still use ```npm``` instead of ```yarn```.)
 
 To get a local copy of the repository please run the following commands on your terminal:
 
