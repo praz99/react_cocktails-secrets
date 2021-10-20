@@ -16,7 +16,7 @@
 .details-container {
   display: flex;
   justify-content: center;
-  background-color: #ffeaf86e;
+  background-color: #ffeaf8;
   padding: 10px 0;
   height: calc(100vh - 200px);
 }
@@ -33,8 +33,7 @@
 }
 
 .details-description {
-  border: 3px solid red;
-  border-radius: 8px;
+  border-left: 1px solid red;
   background-color: #f9dff08f;
   width: 45%;
   margin-left: 10px;
@@ -68,5 +67,9 @@ th:first-child {
 }
 
 .instructions {
+  margin: 10px 1px 1px;
   overflow: auto;
+  background-color: #cfa6c3ba;
+  padding: 5px;
+  line-height:180%;
 }

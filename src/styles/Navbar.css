@@ -1,5 +1,6 @@
 .navbar-container {
-  width: 30%;
+  width: 23%;
+  border-bottom: 1px solid red;
 }
 
 .banner a {
@@ -12,6 +13,7 @@
 .slogan {
   font-size: 10px;
   text-align: right;
-  width: 80%;
+  width: 97%;
   color: #6b0646;
+  padding-bottom: 3px;
 }
