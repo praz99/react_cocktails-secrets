@@ -1,8 +1,6 @@
-/* .category-select-container {
-  position: absolute;
-  top: 2em;
-  right: 2em;
-} */
+.category-select-container {
+  text-align: center;
+}
 
 .category-span {
   font-size: 12px;
@@ -17,4 +15,12 @@
 .category-select:focus-within {
   border: none;
   outline: none;
+}
+
+@media only screen and (min-width: 576px) {
+  .category-select-container {
+    position: absolute;
+    top: 2em;
+    right: 2em;
+  }
 }
