@@ -1,5 +1,5 @@
 .navbar-container {
-  width: 23%;
+  text-align: center;
   border-bottom: 1px solid red;
 }
 
@@ -16,4 +16,10 @@
   width: 97%;
   color: #6b0646;
   padding-bottom: 3px;
+}
+
+@media only screen and (min-width: 576px) {
+  .navbar-container {
+    width: 23%;
+  }
 }
