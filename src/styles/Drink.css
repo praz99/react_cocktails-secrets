@@ -25,7 +25,7 @@
   background: #000000ce;
 }
 
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: 426px) {
   .drink-container {
     margin: 0px;
   }

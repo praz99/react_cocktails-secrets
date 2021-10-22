@@ -28,8 +28,17 @@
   }
 }
 
-/* @media only screen and (min-width: 576px) {
+@media only screen and (min-width: 768px) {
   .navbar-container {
-    width: 23%;
+    width:45%;
+    text-align: left;
   }
-} */
+
+  .banner a {
+    font-size: 3rem;
+  }
+
+  .slogan {
+    font-size: 12px;
+  }
+}

@@ -2,10 +2,17 @@
   display: block;
 }
 
+@media only screen and (min-width: 426px) {
+  .drink-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    margin-top: 1em;
+  }
+}
+
 @media only screen and (min-width: 576px) {
   .drink-list{
-    display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1em;
   }
 }
