@@ -16,11 +16,17 @@
   color: #000;
   text-decoration: none;
   padding: 0 5px;
-  font-size: 0.62em;
+  font-size: 0.4em;
 }
 
 .browse-index-links:hover {
   color: #6b0646;
+}
+
+@media only screen and (min-width: 440px) {
+  .browse-index-links {
+    font-size: 0.65em;
+  }
 }
 
 @media only screen and (min-width: 576px) {
