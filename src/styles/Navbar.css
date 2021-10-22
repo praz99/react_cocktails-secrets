@@ -4,22 +4,32 @@
 }
 
 .banner a {
-  font-size: 3rem;
+  font-size: 2rem;
   color: #45cccc;
   letter-spacing: 1px;
   text-decoration: none;
 }
 
 .slogan {
-  font-size: 10px;
+  font-size: 8px;
   text-align: right;
   width: 97%;
   color: #6b0646;
   padding-bottom: 3px;
 }
 
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: 321px) {
+  .banner a {
+    font-size: 2.5rem;
+  }
+
+  .slogan {
+    font-size: 10px;
+  }
+}
+
+/* @media only screen and (min-width: 576px) {
   .navbar-container {
     width: 23%;
   }
-}
+} */

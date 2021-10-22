@@ -5,7 +5,7 @@
   right: 0;
   z-index: 10;
   background-color: lightblue;
-  height: 30px;
+  height: 20px;
   display: flex;
   align-items: center;
   padding: 5px 10px;
@@ -13,12 +13,12 @@
 
 .footer-left {
   width: 50%;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .name {
   color: #6b0646;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: normal;
 }
 
@@ -30,5 +30,23 @@
 .footer-icons {
   color: black;
   padding: 0 10px;
-  font-size: 20px;
+  font-size: 16px;
+}
+
+@media only screen and (min-width: 376px) {
+  .footer {
+    height: 28px;
+  }
+
+  .footer-left {
+    font-size: 12px;
+  }
+
+  .name {
+    font-size: 14px;
+  }
+
+  .footer-icons {
+    font-size: 20px;
+  }
 }

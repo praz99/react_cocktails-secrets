@@ -3,18 +3,29 @@
 }
 
 .category-span {
-  font-size: 12px;
+  font-size: 10px;
   padding-right: 10px;
 }
 
 .category-select {
   padding: 5px;
   background-color: lightblue;
+  font-size: 10px;
 }
 
 .category-select:focus-within {
   border: none;
   outline: none;
+}
+
+@media only screen and (min-width: 321px) {
+  .category-span {
+    font-size: 12px;
+  }
+
+  .category-select {
+    font-size: 12px;
+  }
 }
 
 @media only screen and (min-width: 576px) {

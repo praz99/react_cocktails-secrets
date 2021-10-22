@@ -2,10 +2,6 @@
   padding: 10px;
 }
 
-.browse-index-container h3 {
-  text-align: center;
-}
-
 .list-alphabetical {
   display: flex;
   list-style-type: none;
@@ -16,16 +12,22 @@
   color: #000;
   text-decoration: none;
   padding: 0 5px;
-  font-size: 0.4em;
+  font-size: 4px;
 }
 
 .browse-index-links:hover {
   color: #6b0646;
 }
 
-@media only screen and (min-width: 440px) {
+@media only screen and (min-width: 321px) {
   .browse-index-links {
-    font-size: 0.65em;
+    font-size: 0.4em;
+  }
+}
+
+@media only screen and (min-width: 426px) {
+  .browse-index-links {
+    font-size: 0.64em;
   }
 }
 

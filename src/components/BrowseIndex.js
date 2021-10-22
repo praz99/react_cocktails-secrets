@@ -17,13 +17,12 @@ const BrowseIndex = () => {
   return (
     <>
       <div className="browse-index-container">
-        <h3>Search Index</h3>
         <ul className="list-alphabetical">
           {ALPHABETS.map(character => (
             <li key={`${character}-1`}>
               <a href={`/search?f=${character}`} className="browse-index-links">{character.toUpperCase()}</a>
             </li>
-          )) }
+          ))}
         </ul>
       </div>
       <DrinkList search={search} />
