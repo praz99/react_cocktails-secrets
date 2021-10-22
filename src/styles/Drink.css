@@ -3,8 +3,9 @@
   background-size: cover;
   display: flex;
   align-items: flex-end;
-  border: 3px solid red;
+  border: 2px solid red;
   border-radius: 8px;
+  margin: 10px 0;
 }
 
 .drink-button {
@@ -22,4 +23,10 @@
 
 .drink-button:hover {
   background: #000000ce;
+}
+
+@media only screen and (min-width: 576px) {
+  .drink-container {
+    margin: 0px;
+  }
 }
