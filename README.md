@@ -9,6 +9,7 @@
 [![View Code](https://img.shields.io/badge/View%20-Code-green)](https://github.com/praz99/react-capstone)
 [![Github Issues](https://img.shields.io/badge/GitHub-Issues-orange)](https://github.com/praz99/react-capstone/issues)
 [![GitHub Pull Requests](https://img.shields.io/badge/GitHub-Pull%20Requests-blue)](https://github.com/praz99/react-capstone/pulls)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fa6df404-e70f-42e7-b20e-7c6d202daf41/deploy-status)](https://app.netlify.com/sites/cocktailsecrets/deploys)
 
 </div>
 
@@ -28,15 +29,15 @@
 
 ## Screenshots
 
+![screenshot](src/images/responsive.png)
 ![screenshot](src/images/main_page.png)
 ![screenshot](src/images/category-shot.png)
 ![screenshot](src/images/detail.png)
-![screenshot](src/images/responsive.png)
 
 ## Live Demo Link <a name = "ll"></a>
 
 ## See Live
-See live on [Heroku](https://praz-cocktailsdb.herokuapp.com/)
+See live on [Netlify](https://cocktailsecrets.netlify.app/)
 
 
 ## Getting Started <a name = "gs"></a>
