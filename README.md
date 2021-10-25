@@ -31,6 +31,7 @@
 ![screenshot](src/images/main_page.png)
 ![screenshot](src/images/category-shot.png)
 ![screenshot](src/images/detail.png)
+![screenshot](src/images/responsive.png)
 
 ## Live Demo Link <a name = "ll"></a>
 
