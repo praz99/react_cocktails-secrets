@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import DrinkList from '../containers/DrinkList';
 import '../styles/BrowseIndex.css';
 
@@ -20,7 +20,7 @@ const BrowseIndex = () => {
         <ul className="list-alphabetical">
           {ALPHABETS.map(character => (
             <li key={`${character}-1`}>
-              <a href={`/search?f=${character}`} className="browse-index-links">{character.toUpperCase()}</a>
+              <Link to={`/search?f=${character}`} className="browse-index-links">{character.toUpperCase()}</Link>
             </li>
           ))}
         </ul>
