@@ -1,17 +1,10 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import Drink from '../components/Drink';
 import CategoryFilter from '../components/CategoryFilter';
 import { API_MAIN, API_SEARCH } from '../constants/api';
-import {
-  dataFetchStart,
-  dataFetchSuccess,
-  dataFetchFailure,
-  changeCategoryAction,
-} from '../actions/index';
-import type { AppDispatch, RootState } from '../reducers';
+import useCocktailStore from '../store/cocktailStore';
 import type { Category, Drink as DrinkType } from '../types';
 
 type DrinkListProps = {
@@ -25,15 +18,18 @@ const Grid = styled.div`
 `;
 
 const DrinkList = ({ search }: DrinkListProps) => {
-  const dispatch = useDispatch<AppDispatch>();
-  const drinks = useSelector((state: RootState) => state.data.drinks);
-  const isLoading = useSelector((state: RootState) => state.data.isLoading);
-  const isError = useSelector((state: RootState) => state.data.isError);
-  const category = useSelector((state: RootState) => state.categories);
+  const drinks = useCocktailStore(state => state.data.drinks);
+  const isLoading = useCocktailStore(state => state.data.isLoading);
+  const isError = useCocktailStore(state => state.data.isError);
+  const category = useCocktailStore(state => state.categories);
+  const changeCategory = useCocktailStore(state => state.changeCategory);
+  const startDataFetch = useCocktailStore(state => state.startDataFetch);
+  const completeDataFetch = useCocktailStore(state => state.completeDataFetch);
+  const failDataFetch = useCocktailStore(state => state.failDataFetch);
 
   const handleChangeCategory = (
     event: React.ChangeEvent<HTMLSelectElement>,
-  ) => dispatch(changeCategoryAction(event.target.value as Category));
+  ) => changeCategory(event.target.value as Category);
 
   let drinkFiltered: DrinkType[];
 
@@ -45,17 +41,17 @@ const DrinkList = ({ search }: DrinkListProps) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      dispatch(dataFetchStart());
+      startDataFetch();
       try {
         const result = await axios(`${API_MAIN}${API_SEARCH}${search}`);
-        dispatch(dataFetchSuccess(result.data));
+        completeDataFetch(result.data);
       } catch (error) {
-        dispatch(dataFetchFailure());
+        failDataFetch();
       }
     };
 
     fetchData();
-  }, [search, dispatch]);
+  }, [search, startDataFetch, completeDataFetch, failDataFetch]);
 
   return (
     <>

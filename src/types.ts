@@ -29,9 +29,3 @@ export interface DrinkFetchState {
   isLoading: boolean;
   isError: boolean;
 }
-
-export interface AppState {
-  data: DrinkFetchState;
-  details: DrinkFetchState;
-  categories: Category;
-}

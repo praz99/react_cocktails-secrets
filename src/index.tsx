@@ -1,9 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { Provider } from 'react-redux';
 import { createGlobalStyle } from 'styled-components';
 import Routes from './Routes';
-import store from './reducers/index';
 
 const GlobalStyle = createGlobalStyle`
   *, *::after, *::before { margin: 0; padding: 0; border: 0; }
@@ -28,8 +26,6 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <GlobalStyle />
-    <Provider store={store}>
-      <Routes />
-    </Provider>
+    <Routes />
   </React.StrictMode>,
 );

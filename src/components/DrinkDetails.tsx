@@ -1,17 +1,11 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import {
-  detailsFetchStart,
-  detailsFetchSuccess,
-  detailsFetchFailure,
-} from '../actions/index';
 import Navbar from '../layouts/Navbar';
 import Footer from '../layouts/Footer';
 import { API_MAIN, API_DETAIL } from '../constants/api';
-import type { AppDispatch, RootState } from '../reducers';
+import useCocktailStore from '../store/cocktailStore';
 
 const DetailsContainer = styled.div`
   display: flex;
@@ -63,24 +57,26 @@ const Instructions = styled.div`
 
 const DrinkDetail = () => {
   const { id } = useParams();
-  const dispatch = useDispatch<AppDispatch>();
-  const drinks = useSelector((state: RootState) => state.details.drinks);
-  const isLoading = useSelector((state: RootState) => state.details.isLoading);
-  const isError = useSelector((state: RootState) => state.details.isError);
+  const drinks = useCocktailStore(state => state.details.drinks);
+  const isLoading = useCocktailStore(state => state.details.isLoading);
+  const isError = useCocktailStore(state => state.details.isError);
+  const startDetailsFetch = useCocktailStore(state => state.startDetailsFetch);
+  const completeDetailsFetch = useCocktailStore(state => state.completeDetailsFetch);
+  const failDetailsFetch = useCocktailStore(state => state.failDetailsFetch);
 
   useEffect(() => {
     const fetchDetail = async () => {
-      dispatch(detailsFetchStart());
+      startDetailsFetch();
       try {
         const result = await axios(`${API_MAIN}${API_DETAIL}${id}`);
-        dispatch(detailsFetchSuccess(result.data));
+        completeDetailsFetch(result.data);
       } catch (error) {
-        dispatch(detailsFetchFailure());
+        failDetailsFetch();
       }
     };
 
     fetchDetail();
-  }, [id, dispatch]);
+  }, [id, startDetailsFetch, completeDetailsFetch, failDetailsFetch]);
 
   const ingredients: string[] = [];
   const quantity: string[] = [];

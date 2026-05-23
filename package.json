@@ -8,12 +8,11 @@
     "query-string": "^6.13.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^8.0.0",
     "react-router-dom": "^6.0.0",
-    "redux": "^4.0.5",
     "styled-components": "5.3.10",
     "vite": "^5.0.0",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "zustand": "^5.0.13"
   },
   "scripts": {
     "start": "vite",
@@ -39,8 +38,8 @@
     "@types/react": "18.3.29"
   },
   "devDependencies": {
-    "@testing-library/react": "^14.0.0",
     "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.0.0",
     "@types/node": "^20.11.30",
     "@types/react": "^18.2.66",
