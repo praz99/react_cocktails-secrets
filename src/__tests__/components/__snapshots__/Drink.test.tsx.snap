@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders item component correctly 1`] = `
+<div
+  className="sc-bgqQcB jfDFIY"
+>
+  <a
+    className="sc-gTRrQi iGdZMX"
+    data-testid="details-link"
+    href="/details/13501"
+    onClick={[Function]}
+  >
+    ABC
+  </a>
+</div>
+`;

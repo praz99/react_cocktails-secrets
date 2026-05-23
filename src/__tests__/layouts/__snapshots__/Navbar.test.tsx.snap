@@ -1,0 +1,33 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders Navbar component correctly 1`] = `
+<div
+  className="sc-bgqQcB JEKZG"
+>
+  <div
+    className="sc-gTRrQi isOain"
+  >
+    <a
+      className="sc-ewnqHT jJzghO"
+      data-testid="navbar-heading"
+      href="/"
+      onClick={[Function]}
+    >
+      The CockTails
+    </a>
+  </div>
+  <div
+    className="sc-fFGjHI jgIiiN"
+  >
+    <div>
+      Find your drink...
+    </div>
+    <div>
+      Learn to make
+    </div>
+    <div>
+      Enjoy!
+    </div>
+  </div>
+</div>
+`;
