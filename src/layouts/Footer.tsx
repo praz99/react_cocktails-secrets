@@ -1,26 +1,30 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const FooterBar = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.8rem 1.2rem;
-  background: #071024;
-  color: #cbd5e1;
+  background: var(--bg-2);
+  color: var(--muted);
   font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
 `;
 
 const Name = styled.span`
-  color: #fff;
+  color: var(--text);
   margin-left: 0.3rem;
   font-weight: 600;
 `;
 
 const IconLink = styled.a`
-  color: #cbd5e1;
+  color: var(--muted);
   margin-left: 0.6rem;
   text-decoration: none;
+  &:hover {
+    color: var(--accent);
+  }
 `;
 
 const Footer = () => (
