@@ -13,8 +13,9 @@ type DrinkListProps = {
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  padding: 1.5rem;
 `;
 
 const DrinkList = ({ search }: DrinkListProps) => {

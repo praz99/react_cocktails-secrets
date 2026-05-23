@@ -7,22 +7,29 @@ type CategoryFilterProps = {
 };
 
 const Container = styled.div`
-  position: absolute;
-  top: 2em;
-  right: 2em;
+  position: relative;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 `;
 
 const Label = styled.span`
-  font-size: 12px;
-  padding-right: 10px;
+  font-size: 0.85rem;
+  color: var(--muted);
 `;
 
 const Select = styled.select`
-  padding: 5px;
-  background-color: lightblue;
+  padding: 8px 10px;
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  font-weight: 600;
   &:focus {
-    border: none;
     outline: none;
+    box-shadow: 0 4px 18px rgba(15, 185, 168, 0.08);
+    border-color: var(--accent);
   }
 `;
 

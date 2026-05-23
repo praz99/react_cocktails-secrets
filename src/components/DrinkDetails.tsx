@@ -10,49 +10,67 @@ import useCocktailStore from '../store/cocktailStore';
 const DetailsContainer = styled.div`
   display: flex;
   justify-content: center;
-  background-color: #bb7b3b;
-  padding: 10px 0;
-  height: calc(100vh - 200px);
+  padding: 2rem 1rem;
+  min-height: calc(100vh - 160px);
+`;
+
+const Card = styled.div`
+  display: flex;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 1100px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+  align-items: flex-start;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    padding: 1rem;
+  }
 `;
 
 const ImageContainer = styled.div`
-  width: 45%;
-  margin-right: 10px;
-  object-fit: contain;
+  flex: 0 0 40%;
+  min-width: 260px;
 `;
 
 const Image = styled.img`
-  border-radius: 8px;
-  width: 75%;
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 `;
 
 const Description = styled.div`
-  border: 3px solid red;
-  border-radius: 8px;
-  background-color: #dad557d9;
-  width: 45%;
-  margin-left: 10px;
-  padding: 20px;
+  flex: 1 1 60%;
+  padding: 0.25rem 0.5rem;
+  color: var(--text);
   overflow: auto;
 `;
 
 const Table = styled.table`
   width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.75rem;
   td,
   th {
-    background-color: #bb7b3b9a;
-    padding: 5px;
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
   }
   .small-col {
     width: 5%;
   }
   .last-col {
-    width: 50%;
+    width: 60%;
   }
 `;
 
 const Instructions = styled.div`
-  overflow: auto;
+  margin-top: 1rem;
+  line-height: 1.5;
 `;
 
 const DrinkDetail = () => {
@@ -103,10 +121,11 @@ const DrinkDetail = () => {
       ) : (
         drinks.map(drink => (
           <DetailsContainer key={drink.idDrink}>
-            <ImageContainer>
-              <Image src={drink.strDrinkThumb} alt={drink.strDrink} />
-            </ImageContainer>
-            <Description>
+            <Card>
+              <ImageContainer>
+                <Image src={drink.strDrinkThumb} alt={drink.strDrink} />
+              </ImageContainer>
+              <Description>
               <h1 className="drink-name detail-fields">{drink.strDrink}</h1>
               <p>
                 <strong>Category:</strong>
@@ -143,7 +162,8 @@ const DrinkDetail = () => {
                 <h3>Preparation</h3>
                 {drink.strInstructions}
               </Instructions>
-            </Description>
+              </Description>
+            </Card>
           </DetailsContainer>
         ))
       )}

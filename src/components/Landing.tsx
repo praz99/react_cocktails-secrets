@@ -68,7 +68,7 @@ const Column = styled.div<{ offset?: boolean }>`
   ${({ offset }) =>
     offset &&
     `
-    transform: translateY(10rem);
+    transform: translateY(15rem);
   `}
 
   @media (max-width: 768px) {
