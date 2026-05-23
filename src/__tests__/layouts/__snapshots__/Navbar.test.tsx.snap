@@ -1,33 +1,35 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`renders Navbar component correctly 1`] = `
-<div
-  className="sc-bgqQcB JEKZG"
->
+<DocumentFragment>
   <div
-    className="sc-gTRrQi isOain"
+    class="sc-bdDsCe iQPPKi"
   >
-    <a
-      className="sc-ewnqHT jJzghO"
-      data-testid="navbar-heading"
-      href="/"
-      onClick={[Function]}
+    <div
+      class="sc-gtcBCx kYMwka"
     >
-      The CockTails
-    </a>
+      <a
+        class="sc-dkXsAU fIgQoA"
+        data-discover="true"
+        data-testid="navbar-heading"
+        href="/"
+      >
+        The CockTails
+      </a>
+    </div>
+    <div
+      class="sc-hKVpXn SiFsN"
+    >
+      <div>
+        Find your drink...
+      </div>
+      <div>
+        Learn to make
+      </div>
+      <div>
+        Enjoy!
+      </div>
+    </div>
   </div>
-  <div
-    className="sc-fFGjHI jgIiiN"
-  >
-    <div>
-      Find your drink...
-    </div>
-    <div>
-      Learn to make
-    </div>
-    <div>
-      Enjoy!
-    </div>
-  </div>
-</div>
+</DocumentFragment>
 `;

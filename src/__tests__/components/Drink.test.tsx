@@ -1,10 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { render, cleanup } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Drink from '../../components/Drink';
-
-afterEach(cleanup);
 
 const drinkOne = {
   idDrink: '13501',
@@ -14,14 +12,12 @@ const drinkOne = {
 };
 
 it('renders item component correctly', () => {
-  const drink = renderer
-    .create(
-      <MemoryRouter>
-        <Drink drink={drinkOne} />
-      </MemoryRouter>,
-    )
-    .toJSON();
-  expect(drink).toMatchSnapshot();
+  const { asFragment } = render(
+    <MemoryRouter>
+      <Drink drink={drinkOne} />
+    </MemoryRouter>,
+  );
+  expect(asFragment()).toMatchSnapshot();
 });
 
 it('renders a link to see drink details', () => {

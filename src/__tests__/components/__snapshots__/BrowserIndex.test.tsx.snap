@@ -1,198 +1,256 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`BrowseIndex component > Renders correctly 1`] = `
-<React.Fragment>
-  <styled.div>
-    <styled.h3>
+<DocumentFragment>
+  <div
+    class="sc-gKkgUA bCnYgn"
+  >
+    <h3
+      class="sc-iCECmn IFZKq"
+    >
       Search Index
-    </styled.h3>
-    <styled.ul>
+    </h3>
+    <ul
+      class="sc-fuztkK cGvTxf"
+    >
       <li>
-        <Styled(Link)
-          to="/search?f=a"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=a"
         >
           A
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=b"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=b"
         >
           B
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=c"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=c"
         >
           C
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=d"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=d"
         >
           D
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=e"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=e"
         >
           E
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=f"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=f"
         >
           F
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=g"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=g"
         >
           G
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=h"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=h"
         >
           H
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=i"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=i"
         >
           I
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=j"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=j"
         >
           J
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=k"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=k"
         >
           K
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=l"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=l"
         >
           L
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=m"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=m"
         >
           M
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=n"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=n"
         >
           N
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=o"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=o"
         >
           O
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=p"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=p"
         >
           P
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=q"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=q"
         >
           Q
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=r"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=r"
         >
           R
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=s"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=s"
         >
           S
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=t"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=t"
         >
           T
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=u"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=u"
         >
           U
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=v"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=v"
         >
           V
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=w"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=w"
         >
           W
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=x"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=x"
         >
           X
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=y"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=y"
         >
           Y
-        </Styled(Link)>
+        </a>
       </li>
       <li>
-        <Styled(Link)
-          to="/search?f=z"
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=z"
         >
           Z
-        </Styled(Link)>
+        </a>
       </li>
-    </styled.ul>
-  </styled.div>
-  <DrinkList
-    search="a"
-  />
-</React.Fragment>
+    </ul>
+  </div>
+  <div>
+    Loading...
+  </div>
+</DocumentFragment>
 `;

@@ -1,13 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { render, screen, cleanup } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Footer from '../../layouts/Footer';
 
-afterEach(cleanup);
-
 it('renders Footer component correctly', () => {
-  const footer = renderer.create(<Footer />).toJSON();
-  expect(footer).toMatchSnapshot();
+  const { asFragment } = render(<Footer />);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 it('should display developer name', () => {

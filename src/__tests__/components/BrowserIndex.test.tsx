@@ -1,6 +1,7 @@
 import React from 'react';
-import { createRenderer } from 'react-test-renderer/shallow';
 import { vi } from 'vitest';
+import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import BrowseIndex from '../../components/BrowseIndex';
 
 vi.mock('react-router-dom', async () => {
@@ -13,8 +14,11 @@ vi.mock('react-router-dom', async () => {
 
 describe('BrowseIndex component', () => {
   it('Renders correctly', () => {
-    const renderer = createRenderer();
-    const wrapper = renderer.render(<BrowseIndex />);
-    expect(wrapper).toMatchSnapshot();
+    const { asFragment } = render(
+      <MemoryRouter>
+        <BrowseIndex />
+      </MemoryRouter>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

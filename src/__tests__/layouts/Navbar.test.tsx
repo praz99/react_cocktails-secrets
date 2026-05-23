@@ -1,20 +1,16 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { render, screen, cleanup } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Navbar from '../../layouts/Navbar';
 
-afterEach(cleanup);
-
 it('renders Navbar component correctly', () => {
-  const nav = renderer
-    .create(
-      <MemoryRouter>
-        <Navbar />
-      </MemoryRouter>,
-    )
-    .toJSON();
-  expect(nav).toMatchSnapshot();
+  const { asFragment } = render(
+    <MemoryRouter>
+      <Navbar />
+    </MemoryRouter>,
+  );
+  expect(asFragment()).toMatchSnapshot();
 });
 
 it('should display the heading', () => {

@@ -3,15 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@vitejs/plugin-react": "^4.0.0",
-    "axios": "^0.21.1",
-    "query-string": "^6.13.8",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.0.0",
-    "styled-components": "5.3.10",
-    "vite": "^5.0.0",
-    "web-vitals": "^0.2.4",
+    "@vitejs/plugin-react": "^6.0.2",
+    "axios": "^1.16.1",
+    "query-string": "^9.3.1",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-is": "19.2.6",
+    "react-router-dom": "^7.15.1",
+    "styled-components": "6.4.2",
+    "vite": "^8.0.14",
+    "web-vitals": "^5.2.0",
     "zustand": "^5.0.13"
   },
   "scripts": {
@@ -34,21 +35,18 @@
       "last 1 safari version"
     ]
   },
-  "resolutions": {
-    "@types/react": "18.3.29"
-  },
   "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.0.0",
-    "@testing-library/react": "^14.0.0",
+    "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.0.0",
-    "@types/node": "^20.11.30",
-    "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
-    "@types/react-test-renderer": "^18.0.7",
-    "@types/styled-components": "^5.1.34",
-    "jsdom": "^22.0.0",
-    "react-test-renderer": "^18.2.0",
-    "typescript": "^5.4.2",
-    "vitest": "^1.0.0"
+    "@types/node": "^25.9.1",
+    "@types/react": "19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "jsdom": "29.1.1",
+    "react-test-renderer": "^19.2.6",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.7"
   }
 }
