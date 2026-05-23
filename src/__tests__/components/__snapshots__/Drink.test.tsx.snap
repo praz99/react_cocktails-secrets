@@ -4,10 +4,10 @@ exports[`renders item component correctly 1`] = `
 <DocumentFragment>
   <div
     bg="https://www.thecocktaildb.com/images/media/drink/tqpvqp1472668328.jpg"
-    class="sc-bdDsCe dEPOdb"
+    class="sc-bdDsCe bEAJTm"
   >
     <a
-      class="sc-gtcBCx joBQbi"
+      class="sc-gtcBCx klRyPV"
       data-discover="true"
       data-testid="details-link"
       href="/details/13501"

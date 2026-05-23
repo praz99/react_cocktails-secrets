@@ -3,13 +3,13 @@
 exports[`renders Navbar component correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-bdDsCe iQPPKi"
+    class="sc-bdDsCe erhqCf"
   >
     <div
-      class="sc-gtcBCx kYMwka"
+      class="sc-gtcBCx kCupDW"
     >
       <a
-        class="sc-dkXsAU fIgQoA"
+        class="sc-dkXsAU eCXSZw"
         data-discover="true"
         data-testid="navbar-heading"
         href="/"
@@ -18,7 +18,7 @@ exports[`renders Navbar component correctly 1`] = `
       </a>
     </div>
     <div
-      class="sc-hKVpXn SiFsN"
+      class="sc-hKVpXn bygvjq"
     >
       <div>
         Find your drink...

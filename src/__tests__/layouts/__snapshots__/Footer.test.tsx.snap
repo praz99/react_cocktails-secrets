@@ -3,14 +3,14 @@
 exports[`renders Footer component correctly 1`] = `
 <DocumentFragment>
   <footer
-    class="sc-bdDsCe ewHgzO"
+    class="sc-bdDsCe eEgIlc"
   >
     <div>
       <span>
         Developed by
       </span>
       <span
-        class="sc-gtcBCx iSuiyV"
+        class="sc-gtcBCx fpuqGZ"
       >
          Prajwal Thapa
       </span>
@@ -18,7 +18,7 @@ exports[`renders Footer component correctly 1`] = `
     <div>
       <a
         aria-label="github link"
-        class="sc-dkXsAU cqtatf"
+        class="sc-dkXsAU grXlPB"
         href="https://github.com/praz99"
         rel="noreferrer"
         target="_blank"
@@ -27,7 +27,7 @@ exports[`renders Footer component correctly 1`] = `
       </a>
       <a
         aria-label="linked-in link"
-        class="sc-dkXsAU cqtatf"
+        class="sc-dkXsAU grXlPB"
         href="https://linkedin.com/in/prazwal-thapa"
         rel="noreferrer"
         target="_blank"
@@ -36,7 +36,7 @@ exports[`renders Footer component correctly 1`] = `
       </a>
       <a
         aria-label="twitter link"
-        class="sc-dkXsAU cqtatf"
+        class="sc-dkXsAU grXlPB"
         href="https://twitter.com/thapa_praz"
         rel="noreferrer"
         target="_blank"
