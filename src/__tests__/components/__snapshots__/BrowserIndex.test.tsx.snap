@@ -1,0 +1,256 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`BrowseIndex component > Renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-gKkgUA bCnYgn"
+  >
+    <h3
+      class="sc-iCECmn IFZKq"
+    >
+      Search Index
+    </h3>
+    <ul
+      class="sc-fuztkK cGvTxf"
+    >
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=a"
+        >
+          A
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=b"
+        >
+          B
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=c"
+        >
+          C
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=d"
+        >
+          D
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=e"
+        >
+          E
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=f"
+        >
+          F
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=g"
+        >
+          G
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=h"
+        >
+          H
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=i"
+        >
+          I
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=j"
+        >
+          J
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=k"
+        >
+          K
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=l"
+        >
+          L
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=m"
+        >
+          M
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=n"
+        >
+          N
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=o"
+        >
+          O
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=p"
+        >
+          P
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=q"
+        >
+          Q
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=r"
+        >
+          R
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=s"
+        >
+          S
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=t"
+        >
+          T
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=u"
+        >
+          U
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=v"
+        >
+          V
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=w"
+        >
+          W
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=x"
+        >
+          X
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=y"
+        >
+          Y
+        </a>
+      </li>
+      <li>
+        <a
+          class="sc-qdQOe cuDKly"
+          data-discover="true"
+          href="/search?f=z"
+        >
+          Z
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    Loading...
+  </div>
+</DocumentFragment>
+`;

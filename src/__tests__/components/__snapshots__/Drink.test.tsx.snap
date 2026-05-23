@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders item component correctly 1`] = `
+<DocumentFragment>
+  <div
+    bg="https://www.thecocktaildb.com/images/media/drink/tqpvqp1472668328.jpg"
+    class="sc-bdDsCe dEPOdb"
+  >
+    <a
+      class="sc-gtcBCx joBQbi"
+      data-discover="true"
+      data-testid="details-link"
+      href="/details/13501"
+    >
+      ABC
+    </a>
+  </div>
+</DocumentFragment>
+`;

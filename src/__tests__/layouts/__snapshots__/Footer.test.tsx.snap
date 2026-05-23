@@ -1,0 +1,49 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders Footer component correctly 1`] = `
+<DocumentFragment>
+  <footer
+    class="sc-bdDsCe ewHgzO"
+  >
+    <div>
+      <span>
+        Developed by
+      </span>
+      <span
+        class="sc-gtcBCx iSuiyV"
+      >
+         Prajwal Thapa
+      </span>
+    </div>
+    <div>
+      <a
+        aria-label="github link"
+        class="sc-dkXsAU cqtatf"
+        href="https://github.com/praz99"
+        rel="noreferrer"
+        target="_blank"
+      >
+        GitHub
+      </a>
+      <a
+        aria-label="linked-in link"
+        class="sc-dkXsAU cqtatf"
+        href="https://linkedin.com/in/prazwal-thapa"
+        rel="noreferrer"
+        target="_blank"
+      >
+        LinkedIn
+      </a>
+      <a
+        aria-label="twitter link"
+        class="sc-dkXsAU cqtatf"
+        href="https://twitter.com/thapa_praz"
+        rel="noreferrer"
+        target="_blank"
+      >
+        Twitter
+      </a>
+    </div>
+  </footer>
+</DocumentFragment>
+`;

@@ -1,0 +1,35 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders Navbar component correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdDsCe iQPPKi"
+  >
+    <div
+      class="sc-gtcBCx kYMwka"
+    >
+      <a
+        class="sc-dkXsAU fIgQoA"
+        data-discover="true"
+        data-testid="navbar-heading"
+        href="/"
+      >
+        The CockTails
+      </a>
+    </div>
+    <div
+      class="sc-hKVpXn SiFsN"
+    >
+      <div>
+        Find your drink...
+      </div>
+      <div>
+        Learn to make
+      </div>
+      <div>
+        Enjoy!
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
