@@ -21,25 +21,7 @@
     "build": "vite build",
     "test": "vitest",
     "test:watch": "vitest --watch",
-    "typecheck": "tsc --noEmit",
-    "lint": "eslint . --ext .ts,.tsx"
-  },
-  "eslintConfig": {
-    "env": {
-      "browser": true,
-      "es2021": true,
-      "node": true
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended",
-      "airbnb"
-    ],
-    "settings": {
-      "react": {
-        "version": "detect"
-      }
-    }
+    "typecheck": "tsc --noEmit"
   },
   "browserslist": {
     "production": [
@@ -65,15 +47,6 @@
     "@types/react-dom": "^18.2.22",
     "@types/react-test-renderer": "^18.0.7",
     "@types/styled-components": "^5.1.34",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^8.50.0",
-    "eslint-config-airbnb": "^18.1.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-react-hooks": "^2.5.1",
     "jsdom": "^22.0.0",
     "react-test-renderer": "^18.2.0",
     "stylelint": "^13.3.3",
