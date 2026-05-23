@@ -9,6 +9,7 @@
 [![View Code](https://img.shields.io/badge/View%20-Code-green)](https://github.com/praz99/react-capstone)
 [![Github Issues](https://img.shields.io/badge/GitHub-Issues-orange)](https://github.com/praz99/react-capstone/issues)
 [![GitHub Pull Requests](https://img.shields.io/badge/GitHub-Pull%20Requests-blue)](https://github.com/praz99/react-capstone/pulls)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fa6df404-e70f-42e7-b20e-7c6d202daf41/deploy-status)](https://app.netlify.com/sites/cocktailsecrets/deploys)
 
 </div>
 
@@ -28,6 +29,7 @@
 
 ## Screenshots
 
+![screenshot](src/images/responsive.png)
 ![screenshot](src/images/main_page.png)
 ![screenshot](src/images/category-shot.png)
 ![screenshot](src/images/detail.png)
@@ -35,13 +37,14 @@
 ## Live Demo Link <a name = "ll"></a>
 
 ## See Live
-[Heroku](https://praz-cocktailsdb.herokuapp.com/)   
-[Netlify](https://thecocktails-praz.netlify.app/)
+See live on [Netlify](https://cocktailsecrets.netlify.app/)
 
 
 ## Getting Started <a name = "gs"></a>
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Make sure you have [Node](https://nodejs.org/en/), installed in your computer.   
+Install [yarn](https://yarnpkg.com/getting-started/install). (or you can still use ```npm``` instead of ```yarn```.)
 
 To get a local copy of the repository please run the following commands on your terminal:
 
