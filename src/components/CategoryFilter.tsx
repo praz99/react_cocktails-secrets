@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import selectCategories from '../constants/categories';
+import React from "react";
+import styled from "styled-components";
+import selectCategories from "../constants/categories";
 
 type CategoryFilterProps = {
   handleFilterChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
@@ -21,9 +21,9 @@ const Label = styled.span`
 
 const Select = styled.select`
   padding: 8px 10px;
-  background: rgba(255,255,255,0.03);
+  background: rgba(255, 255, 255, 0.03);
   color: var(--text);
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 8px;
   font-weight: 600;
   &:focus {
