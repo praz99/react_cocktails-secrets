@@ -1,15 +1,15 @@
 # The Cocktails DB
 
->This the the capstone project for the react-redux module of [Microverse](https://www.microverse.org/) main technical curriculum.  
->In this project I have fetched the data from [The Cocktails DB](https://www.thecocktaildb.com/) API and presented in the app.
->The users can look for various drinks according to the first alphabet of its name in the main page. Also the users can use the available filters to filter the drink categories such as cocktails, ordinary drinks, shots, and others.
->Users can see the details of a particular drink by clicking its name.
+> This the the capstone project for the react-redux module of [Microverse](https://www.microverse.org/) main technical curriculum.  
+> In this project I have fetched the data from [The Cocktails DB](https://www.thecocktaildb.com/) API and presented in the app.
+> The users can look for various drinks according to the first alphabet of its name in the main page. Also the users can use the available filters to filter the drink categories such as cocktails, ordinary drinks, shots, and others.
+> Users can see the details of a particular drink by clicking its name.
+
 <div align="center">
 
 [![View Code](https://img.shields.io/badge/View%20-Code-green)](https://github.com/praz99/react-capstone)
 [![Github Issues](https://img.shields.io/badge/GitHub-Issues-orange)](https://github.com/praz99/react-capstone/issues)
 [![GitHub Pull Requests](https://img.shields.io/badge/GitHub-Pull%20Requests-blue)](https://github.com/praz99/react-capstone/pulls)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/fa6df404-e70f-42e7-b20e-7c6d202daf41/deploy-status)](https://app.netlify.com/sites/cocktailsecrets/deploys)
 
 </div>
 
@@ -23,9 +23,12 @@
 </p>
 
 ## 🔧 Built with<a name = "with"></a>
+
 - ReactJS
-- React-Redux
-- HTML 5 and CSS 3
+- Typescript
+- Vite
+- Zustand
+- Styled Components
 
 ## Screenshots
 
@@ -37,39 +40,43 @@
 ## Live Demo Link <a name = "ll"></a>
 
 ## See Live
-See live on [Netlify](https://cocktailsecrets.netlify.app/)
 
+See live on [Vercel](https://react-cocktails-secrets.vercel.app/)
 
 ## Getting Started <a name = "gs"></a>
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Make sure you have [Node](https://nodejs.org/en/), installed in your computer.   
-Install [yarn](https://yarnpkg.com/getting-started/install). (or you can still use ```npm``` instead of ```yarn```.)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and later migrated to [Vite](https://vite.dev/).
+
+Make sure you have [Node](https://nodejs.org/en/), installed in your computer.  
+Install [yarn](https://yarnpkg.com/getting-started/install). (or you can still use `npm` instead of `yarn`.)
 
 To get a local copy of the repository please run the following commands on your terminal:
 
 ```
-$ git clone git@github.com:praz99/react-capstone.git
+$ git clone git@github.com:praz99/react_cocktails-secrets.git
 ```
+
 ```
-$ cd react-capstone
+$ cd react_cocktails-secrets
 ```
 
 ```
 $ yarn install
 ```
+
 ```
 $ yarn start
 ```
 
 This runs the app in the development mode.
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
 ## Testing
-This app has been tested using the ```react-testing-library```.
-Run ```yarn test``` in the console to run the tests.
 
-## ✒️  Authors <a name = "author"></a>
+This app has been tested using the `vitest` and `react-testing-library`.
+Run `yarn test` in the console to run the tests.
+
+## ✒️ Authors <a name = "author"></a>
 
 👤 **Prajwal Thapa**
 
@@ -82,14 +89,14 @@ Run ```yarn test``` in the console to run the tests.
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/praz99/react-capstone/issues).
-
+Feel free to check the [issues page](https://github.com/praz99/react_cocktails-secrets/issues).
 
 ## 👍 Show your support
 
 Give a ⭐️ if you like this project!
 
 ## :clap: Acknowledgements
+
 - [The Cocktails DB](https://www.thecocktaildb.com/)
 - [Microverse](https://www.microverse.org/)
 
