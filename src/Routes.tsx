@@ -1,11 +1,11 @@
-import React, { Suspense, lazy } from "react";
+import { Suspense, lazy } from "react";
 import { BrowserRouter, Routes as RouterRoutes, Route } from "react-router-dom";
 import styled from "styled-components";
 import ErrorBoundary from "./components/ErrorBoundary";
-const Landing = lazy(() => import("./components/Landing"));
+const LandingPage = lazy(() => import("./pages/LandingPage"));
 const BrowsePage = lazy(() => import("./pages/BrowsePage"));
 const SearchPage = lazy(() => import("./pages/SearchPage"));
-const DrinkDetails = lazy(() => import("./components/DrinkDetails"));
+const DrinkDetailsPage = lazy(() => import("./pages/DrinkDetailsPage"));
 
 const LoadingFallback = styled.div`
   display: flex;
@@ -28,9 +28,9 @@ export const Routes = () => (
       <Suspense fallback={<PageLoading />}>
         <RouterRoutes>
           <Route path="/browse" element={<BrowsePage />} />
-          <Route path="/" element={<Landing />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/search" element={<SearchPage />} />
-          <Route path="/details/:id" element={<DrinkDetails />} />
+          <Route path="/details/:id" element={<DrinkDetailsPage />} />
         </RouterRoutes>
       </Suspense>
     </ErrorBoundary>

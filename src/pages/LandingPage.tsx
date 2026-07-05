@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import styled, { keyframes } from "styled-components";
-import Drink from "./Drink";
+import Drink from "../components/Drink";
 import { API_MAIN } from "../constants/api";
 import { Link } from "react-router-dom";
 import type { Drink as DrinkType } from "../types";
-import Loading from "./Loading";
+import Loading from "../components/Loading";
 
 const fadeIn = keyframes`from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}`;
 
@@ -19,7 +19,11 @@ const Title = styled.h1`
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 800;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, ${({ theme }) => theme.colors.accent}, #48d1c0);
+  background: linear-gradient(
+    135deg,
+    ${({ theme }) => theme.colors.accent},
+    #48d1c0
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -47,14 +51,19 @@ const CTA = styled(Link)`
   text-decoration: none;
   transition: all ${({ theme }) => theme.transitions.fast};
   margin: 0 0.4rem 0.75rem;
-  &:hover { transform: translateY(-2px); box-shadow: ${({ theme }) => theme.shadows.glow}; }
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: ${({ theme }) => theme.shadows.glow};
+  }
 `;
 
 const OutlineCTA = styled(CTA)`
   background: transparent;
   color: ${({ theme }) => theme.colors.accent};
   border: 1px solid ${({ theme }) => theme.colors.accent};
-  &:hover { background: ${({ theme }) => theme.colors.accentGlow}; }
+  &:hover {
+    background: ${({ theme }) => theme.colors.accentGlow};
+  }
 `;
 
 const Featured = styled.section`
@@ -72,7 +81,7 @@ const Grid = styled.div`
 
 type DrinkState = { loading: boolean; data?: DrinkType };
 
-const Landing = () => {
+const LandingPage = () => {
   const [cards, setCards] = useState<DrinkState[]>([]);
 
   useEffect(() => {
@@ -83,9 +92,17 @@ const Landing = () => {
       try {
         const res = await axios.get(`${API_MAIN}random.php`);
         const drink = res.data.drinks?.[0];
-        setCards((prev) => { const c = [...prev]; c[index] = { loading: false, data: drink }; return c; });
+        setCards((prev) => {
+          const c = [...prev];
+          c[index] = { loading: false, data: drink };
+          return c;
+        });
       } catch {
-        setCards((prev) => { const c = [...prev]; c[index] = { loading: false }; return c; });
+        setCards((prev) => {
+          const c = [...prev];
+          c[index] = { loading: false };
+          return c;
+        });
       }
     });
   }, []);
@@ -94,7 +111,10 @@ const Landing = () => {
     <div>
       <Hero>
         <Title>Welcome to The CockTails</Title>
-        <Sub>Discover crafted cocktail recipes from around the world. Mix, sip, and enjoy.</Sub>
+        <Sub>
+          Discover crafted cocktail recipes from around the world. Mix, sip, and
+          enjoy.
+        </Sub>
         <div>
           <CTA to="/search?f=a">Browse All Drinks</CTA>
           <OutlineCTA to="/browse">Browse Categories</OutlineCTA>
@@ -102,15 +122,19 @@ const Landing = () => {
       </Hero>
       <Featured>
         <Grid>
-          {cards.map((card, i) => (
-            card.loading ? <Loading key={i} /> :
-            card.data ? <Drink key={card.data.idDrink} drink={card.data} large /> :
-            <div key={i}>Failed to load</div>
-          ))}
+          {cards.map((card, i) =>
+            card.loading ? (
+              <Loading key={i} />
+            ) : card.data ? (
+              <Drink key={card.data.idDrink} drink={card.data} large />
+            ) : (
+              <div key={i}>Failed to load</div>
+            ),
+          )}
         </Grid>
       </Featured>
     </div>
   );
 };
 
-export default Landing;
+export default LandingPage;

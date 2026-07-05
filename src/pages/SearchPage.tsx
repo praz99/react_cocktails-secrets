@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import SearchIndex from "../components/SearchIndex";
 import Navbar from "../layouts/Navbar";
