@@ -1,8 +1,7 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const NavContainer = styled.header`
+export const NavContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,32 +14,22 @@ const NavContainer = styled.header`
   z-index: 100;
 `;
 
-const Banner = styled(Link)`
+export const Banner = styled(Link)`
   font-size: 1.3rem;
   font-weight: 800;
   color: ${({ theme }) => theme.colors.accent};
   text-decoration: none;
   letter-spacing: -0.02em;
   transition: opacity ${({ theme }) => theme.transitions.fast};
-  &:hover { opacity: 0.85; }
+  &:hover {
+    opacity: 0.85;
+  }
 `;
 
-const Tagline = styled.div`
+export const Tagline = styled.div`
   text-align: right;
   font-size: 0.8rem;
   line-height: 1.4;
   color: ${({ theme }) => theme.colors.muted};
   font-weight: 500;
 `;
-
-const Navbar = () => (
-  <NavContainer>
-    <Banner to="/" data-testid="navbar-heading">The CockTails</Banner>
-    <Tagline>
-      <div>Find your drink…</div>
-      <div>Learn to make. Enjoy!</div>
-    </Tagline>
-  </NavContainer>
-);
-
-export default Navbar;
