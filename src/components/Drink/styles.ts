@@ -1,12 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import type { Drink as DrinkType } from "../types";
 
 type ContainerProps = { $bg: string; $large?: boolean };
-type DrinkProps = { drink: DrinkType; large?: boolean };
 
-const Card = styled(Link)<ContainerProps>`
+export const Card = styled(Link)<ContainerProps>`
   position: relative;
   width: 100%;
   aspect-ratio: ${({ $large }) => ($large ? "4 / 5" : "1 / 1")};
@@ -25,7 +22,11 @@ const Card = styled(Link)<ContainerProps>`
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 40%, rgba(6, 13, 26, 0.85) 100%);
+    background: linear-gradient(
+      180deg,
+      transparent 40%,
+      rgba(6, 13, 26, 0.85) 100%
+    );
     opacity: 0.7;
     transition: opacity ${({ theme }) => theme.transitions.normal};
   }
@@ -33,7 +34,9 @@ const Card = styled(Link)<ContainerProps>`
   &:hover {
     transform: translateY(-4px) scale(1.02);
     box-shadow: ${({ theme }) => theme.shadows.lg};
-    &::before { opacity: 0.9; }
+    &::before {
+      opacity: 0.9;
+    }
   }
 
   &:focus-visible {
@@ -42,7 +45,7 @@ const Card = styled(Link)<ContainerProps>`
   }
 `;
 
-const Name = styled.span`
+export const Name = styled.span`
   position: relative;
   z-index: 1;
   display: block;
@@ -54,11 +57,3 @@ const Name = styled.span`
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
   line-height: 1.3;
 `;
-
-const Drink = ({ drink, large = false }: DrinkProps) => (
-  <Card to={`/details/${drink.idDrink}`} $bg={drink.strDrinkThumb} $large={large} data-testid="details-link">
-    <Name>{drink.strDrink}</Name>
-  </Card>
-);
-
-export default Drink;

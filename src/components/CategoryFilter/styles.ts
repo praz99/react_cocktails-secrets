@@ -1,12 +1,6 @@
-import React from "react";
 import styled from "styled-components";
-import { CATEGORIES } from "../constants/categories";
 
-type CategoryFilterProps = {
-  handleFilterChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
-};
-
-const Container = styled.div`
+export const Container = styled.div`
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -23,14 +17,14 @@ const Container = styled.div`
   }
 `;
 
-const Label = styled.label`
+export const Label = styled.label`
   font-size: 0.85rem;
   font-weight: 600;
   color: ${({ theme }) => theme.colors.muted};
   white-space: nowrap;
 `;
 
-const Select = styled.select`
+export const Select = styled.select`
   flex: 1;
   padding: 0.5rem 0.75rem;
   background: ${({ theme }) => theme.colors.surface};
@@ -58,24 +52,3 @@ const Select = styled.select`
     color: ${({ theme }) => theme.colors.text};
   }
 `;
-
-const CategoryFilter = ({ handleFilterChange }: CategoryFilterProps) => (
-  <Container>
-    <Label htmlFor="category-select">Filter by Category</Label>
-    <Select
-      id="category-select"
-      onChange={handleFilterChange}
-      name="category"
-      defaultValue="All"
-    >
-      <option value="All">All Drinks</option>
-      {CATEGORIES.map((category) => (
-        <option key={category} value={category}>
-          {category}
-        </option>
-      ))}
-    </Select>
-  </Container>
-);
-
-export default CategoryFilter;

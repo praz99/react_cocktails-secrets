@@ -1,32 +1,15 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import styled from "styled-components";
-import Drink from "../components/Drink";
-import CategoryFilter from "../components/CategoryFilter";
-import { API_MAIN, API_SEARCH } from "../constants/api";
-import useCocktailStore from "../store/cocktailStore";
-import type { Category, Drink as DrinkType } from "../types";
+import Drink from "../../components/Drink";
+import CategoryFilter from "../../components/CategoryFilter";
+import { API_MAIN, API_SEARCH } from "../../constants/api";
+import useCocktailStore from "../../store/cocktailStore";
+import type { Category, Drink as DrinkType } from "../../types";
+import { Grid, Message } from "./styles";
 
 type DrinkListProps = {
   search: string;
 };
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1.25rem;
-  padding: 0 0 2rem;
-`;
-
-const Message = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 200px;
-  color: ${({ theme }) => theme.colors.muted};
-  font-size: 0.95rem;
-  text-align: center;
-`;
 
 const DrinkList = ({ search }: DrinkListProps) => {
   const drinks = useCocktailStore((state) => state.data.drinks);
