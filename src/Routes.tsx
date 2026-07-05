@@ -1,18 +1,38 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes as RouterRoutes, Route } from "react-router-dom";
-import App from "./components/App";
-import Landing from "./components/Landing";
-import DrinkDetails from "./components/DrinkDetails";
+import styled from "styled-components";
+import ErrorBoundary from "./components/ErrorBoundary";
+const Landing = lazy(() => import("./components/Landing"));
+const BrowsePage = lazy(() => import("./pages/BrowsePage"));
+const SearchPage = lazy(() => import("./pages/SearchPage"));
+const DrinkDetails = lazy(() => import("./components/DrinkDetails"));
 
-const Routes = () => (
-  <BrowserRouter>
-    <RouterRoutes>
-      <Route path="/" element={<Landing />} />
-      <Route path="/browse" element={<App />} />
-      <Route path="/search" element={<App />} />
-      <Route path="/details/:id" element={<DrinkDetails />} />
-    </RouterRoutes>
-  </BrowserRouter>
+const LoadingFallback = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  color: ${({ theme }) => theme.colors.muted};
+  font-size: 1rem;
+`;
+
+const PageLoading = () => (
+  <LoadingFallback>
+    <span>Loading…</span>
+  </LoadingFallback>
 );
 
-export default Routes;
+export const Routes = () => (
+  <BrowserRouter>
+    <ErrorBoundary>
+      <Suspense fallback={<PageLoading />}>
+        <RouterRoutes>
+          <Route path="/browse" element={<BrowsePage />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/details/:id" element={<DrinkDetails />} />
+        </RouterRoutes>
+      </Suspense>
+    </ErrorBoundary>
+  </BrowserRouter>
+);

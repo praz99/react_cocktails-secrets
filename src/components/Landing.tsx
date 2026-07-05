@@ -1,167 +1,112 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Drink from "./Drink";
 import { API_MAIN } from "../constants/api";
 import { Link } from "react-router-dom";
 import type { Drink as DrinkType } from "../types";
 import Loading from "./Loading";
 
-/* ---------------- Hero ---------------- */
+const fadeIn = keyframes`from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}`;
 
 const Hero = styled.section`
-  padding: 3rem 1.5rem;
+  padding: 4rem 1.5rem 3rem;
   text-align: center;
-  color: var(--text);
+  animation: ${fadeIn} 0.6s ease-out;
 `;
 
 const Title = styled.h1`
-  font-size: 2.2rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
   margin-bottom: 0.5rem;
-  color: var(--accent);
+  background: linear-gradient(135deg, ${({ theme }) => theme.colors.accent}, #48d1c0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 `;
 
-const Subtitle = styled.p`
-  color: var(--muted);
-  margin-bottom: 1.5rem;
-`;
-
-const CTAGroup = styled.div`
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
+const Sub = styled.p`
+  color: ${({ theme }) => theme.colors.muted};
+  font-size: 1.05rem;
   margin-bottom: 2rem;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const CTA = styled(Link)`
-  background: var(--accent);
-  color: var(--bg-2);
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.bg2};
+  padding: 0.7rem 1.5rem;
+  border-radius: ${({ theme }) => theme.radius.full};
   font-weight: 700;
+  font-size: 0.9rem;
   text-decoration: none;
+  transition: all ${({ theme }) => theme.transitions.fast};
+  margin: 0 0.4rem 0.75rem;
+  &:hover { transform: translateY(-2px); box-shadow: ${({ theme }) => theme.shadows.glow}; }
 `;
 
-/* ---------------- Layout ---------------- */
+const OutlineCTA = styled(CTA)`
+  background: transparent;
+  color: ${({ theme }) => theme.colors.accent};
+  border: 1px solid ${({ theme }) => theme.colors.accent};
+  &:hover { background: ${({ theme }) => theme.colors.accentGlow}; }
+`;
 
-const Featured = styled.div`
-  padding: 2rem 1.5rem 5rem;
+const Featured = styled.section`
+  padding: 1rem 1.5rem 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: ${fadeIn} 0.6s ease-out 0.2s both;
 `;
 
 const Grid = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  align-items: flex-start;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
-const Column = styled.div<{ offset?: boolean }>`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
-  width: 50%;
-
-  ${({ offset }) =>
-    offset &&
-    `
-    transform: translateY(15rem);
-  `}
-
-  @media (max-width: 768px) {
-    width: 100%;
-    transform: none;
-  }
 `;
 
-const CardWrapper = styled.div`
-  width: 100%;
-`;
-
-/* ---------------- Types ---------------- */
-
-type DrinkState = {
-  loading: boolean;
-  data?: DrinkType;
-};
-
-/* ---------------- Component ---------------- */
+type DrinkState = { loading: boolean; data?: DrinkType };
 
 const Landing = () => {
   const [cards, setCards] = useState<DrinkState[]>([]);
 
   useEffect(() => {
-    const initial = Array.from({ length: 3 }).map(() => ({
-      loading: true,
-    }));
-
+    const initial = Array.from({ length: 6 }, () => ({ loading: true }));
     setCards(initial);
 
     initial.forEach(async (_, index) => {
       try {
         const res = await axios.get(`${API_MAIN}random.php`);
         const drink = res.data.drinks?.[0];
-
-        setCards((prev) => {
-          const copy = [...prev];
-          copy[index] = { loading: false, data: drink };
-          return copy;
-        });
-      } catch (err) {
-        setCards((prev) => {
-          const copy = [...prev];
-          copy[index] = { loading: false, data: undefined };
-          return copy;
-        });
+        setCards((prev) => { const c = [...prev]; c[index] = { loading: false, data: drink }; return c; });
+      } catch {
+        setCards((prev) => { const c = [...prev]; c[index] = { loading: false }; return c; });
       }
     });
   }, []);
-
-  /* split into columns */
-  const left: DrinkState[] = [];
-  const right: DrinkState[] = [];
-
-  cards.forEach((card, index) => {
-    if (index % 2 === 0) left.push(card);
-    else right.push(card);
-  });
-
-  const renderCard = (card: DrinkState) => {
-    if (card.loading) return <Loading />;
-    if (!card.data) return <div>Failed to load</div>;
-    return <Drink drink={card.data} large />;
-  };
 
   return (
     <div>
       <Hero>
         <Title>Welcome to The CockTails</Title>
-        <Subtitle>
-          Discover crafted cocktail recipes — loaded progressively.
-        </Subtitle>
-
-        <CTAGroup>
-          <CTA to="/search?f=a">Browse All</CTA>
-          <CTA to="/browse">Browse Categories</CTA>
-        </CTAGroup>
+        <Sub>Discover crafted cocktail recipes from around the world. Mix, sip, and enjoy.</Sub>
+        <div>
+          <CTA to="/search?f=a">Browse All Drinks</CTA>
+          <OutlineCTA to="/browse">Browse Categories</OutlineCTA>
+        </div>
       </Hero>
-
       <Featured>
         <Grid>
-          <Column>
-            {left.map((card, i) => (
-              <CardWrapper key={`l-${i}`}>{renderCard(card)}</CardWrapper>
-            ))}
-          </Column>
-
-          <Column offset>
-            {right.map((card, i) => (
-              <CardWrapper key={`r-${i}`}>{renderCard(card)}</CardWrapper>
-            ))}
-          </Column>
+          {cards.map((card, i) => (
+            card.loading ? <Loading key={i} /> :
+            card.data ? <Drink key={card.data.idDrink} drink={card.data} large /> :
+            <div key={i}>Failed to load</div>
+          ))}
         </Grid>
       </Featured>
     </div>

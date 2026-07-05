@@ -3,59 +3,62 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import type { Drink as DrinkType } from "../types";
 
-type ContainerProps = {
-  bg: string;
-  large?: boolean;
-};
+type ContainerProps = { $bg: string; $large?: boolean };
+type DrinkProps = { drink: DrinkType; large?: boolean };
 
-type DrinkProps = {
-  drink: DrinkType;
-  large?: boolean;
-};
-
-const Container = styled.div<ContainerProps>`
+const Card = styled(Link)<ContainerProps>`
+  position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  background-size: cover;
+  aspect-ratio: ${({ $large }) => ($large ? "4 / 5" : "1 / 1")};
+  border-radius: ${({ theme }) => theme.radius.md};
+  overflow: hidden;
   display: flex;
   align-items: flex-end;
-  border-radius: 10px;
-  background-image: url(${(props) => props.bg});
+  background-image: url(${(p) => p.$bg});
+  background-size: cover;
   background-position: center;
-  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
-  overflow: hidden;
-`;
-
-const Button = styled(Link)`
-  background: linear-gradient(
-    90deg,
-    rgba(11, 18, 32, 0.6),
-    rgba(11, 18, 32, 0.4)
-  );
-  color: var(--text);
-  font-weight: 700;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 12px;
-  margin: 12px;
-  width: calc(100% - 24px);
   text-decoration: none;
-  backdrop-filter: blur(4px);
-  transition:
-    transform 150ms ease,
-    box-shadow 150ms ease;
+  box-shadow: ${({ theme }) => theme.shadows.md};
+  transition: all ${({ theme }) => theme.transitions.normal};
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(6, 13, 26, 0.85) 100%);
+    opacity: 0.7;
+    transition: opacity ${({ theme }) => theme.transitions.normal};
+  }
+
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(11, 18, 32, 0.5);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: ${({ theme }) => theme.shadows.lg};
+    &::before { opacity: 0.9; }
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.colors.accent};
+    outline-offset: 2px;
   }
 `;
 
+const Name = styled.span`
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: ${({ theme }) => theme.colors.text};
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  line-height: 1.3;
+`;
+
 const Drink = ({ drink, large = false }: DrinkProps) => (
-  <Container bg={drink.strDrinkThumb} large={large}>
-    <Button to={`/details/${drink.idDrink}`} data-testid="details-link">
-      {drink.strDrink}
-    </Button>
-  </Container>
+  <Card to={`/details/${drink.idDrink}`} $bg={drink.strDrinkThumb} $large={large} data-testid="details-link">
+    <Name>{drink.strDrink}</Name>
+  </Card>
 );
 
 export default Drink;
