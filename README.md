@@ -32,10 +32,10 @@
 
 ## Screenshots
 
-![screenshot](src/images/responsive.png)
-![screenshot](src/images/main_page.png)
-![screenshot](src/images/category-shot.png)
-![screenshot](src/images/detail.png)
+![screenshot](src/assets/images/responsive.png)
+![screenshot](src/assets/images/main_page.png)
+![screenshot](src/assets/images/category-shot.png)
+![screenshot](src/assets/images/detail.png)
 
 ## Live Demo Link <a name = "ll"></a>
 
