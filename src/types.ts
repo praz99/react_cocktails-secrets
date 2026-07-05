@@ -1,13 +1,13 @@
 export type Category =
-  | 'All'
-  | 'Cocktail'
-  | 'Shot'
-  | 'Ordinary Drink'
-  | 'Punch / Party Drink'
-  | 'Coffee / Tea'
-  | 'Soft Drink / Soda'
-  | 'Beer'
-  | 'Cocoa';
+  | "All"
+  | "Cocktail"
+  | "Shot"
+  | "Ordinary Drink"
+  | "Punch / Party Drink"
+  | "Coffee / Tea"
+  | "Soft Drink / Soda"
+  | "Beer"
+  | "Cocoa";
 
 export interface Drink {
   idDrink: string;
