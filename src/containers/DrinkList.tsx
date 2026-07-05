@@ -13,9 +13,19 @@ type DrinkListProps = {
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1.25rem;
-  padding: 1.5rem;
+  padding: 0 0 2rem;
+`;
+
+const Message = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: ${({ theme }) => theme.colors.muted};
+  font-size: 0.95rem;
+  text-align: center;
 `;
 
 const DrinkList = ({ search }: DrinkListProps) => {
@@ -57,9 +67,9 @@ const DrinkList = ({ search }: DrinkListProps) => {
 
   return (
     <>
-      {isError && <div>Something went wrong. Please try again...</div>}
+      {isError && <Message>Something went wrong. Please try again…</Message>}
       {isLoading ? (
-        <div>Loading...</div>
+        <Message>Loading drinks…</Message>
       ) : (
         <>
           <CategoryFilter handleFilterChange={handleChangeCategory} />
@@ -70,9 +80,9 @@ const DrinkList = ({ search }: DrinkListProps) => {
               ))}
             </Grid>
           ) : (
-            <div>
-              No drinks available for this category... Please try another one.
-            </div>
+            <Message>
+              No drinks available for this category. Please try another one.
+            </Message>
           )}
         </>
       )}

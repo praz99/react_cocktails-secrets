@@ -2,46 +2,44 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const NavContainer = styled.div`
+const NavContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
-  background: linear-gradient(90deg, var(--bg-1), var(--bg-2));
-  color: var(--text);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  background: ${({ theme }) => theme.colors.glassBg};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.glassBorder};
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 `;
 
-const Banner = styled.div`
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--accent);
-`;
-
-const StyledLink = styled(Link)`
-  color: inherit;
+const Banner = styled(Link)`
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: ${({ theme }) => theme.colors.accent};
   text-decoration: none;
+  letter-spacing: -0.02em;
+  transition: opacity ${({ theme }) => theme.transitions.fast};
+  &:hover { opacity: 0.85; }
 `;
 
-const Slogan = styled.div`
+const Tagline = styled.div`
   text-align: right;
-  font-size: 0.9rem;
-  opacity: 0.85;
-  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: ${({ theme }) => theme.colors.muted};
+  font-weight: 500;
 `;
 
 const Navbar = () => (
   <NavContainer>
-    <Banner>
-      <StyledLink to="/" data-testid="navbar-heading">
-        The CockTails
-      </StyledLink>
-    </Banner>
-    <Slogan>
-      <div>Find your drink...</div>
-      <div>Learn to make</div>
-      <div>Enjoy!</div>
-    </Slogan>
+    <Banner to="/" data-testid="navbar-heading">The CockTails</Banner>
+    <Tagline>
+      <div>Find your drink…</div>
+      <div>Learn to make. Enjoy!</div>
+    </Tagline>
   </NavContainer>
 );
 

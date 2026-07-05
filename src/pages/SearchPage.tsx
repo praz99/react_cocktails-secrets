@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import BrowseIndex from './BrowseIndex';
-import Navbar from '../layouts/Navbar';
-import Footer from '../layouts/Footer';
+import React from "react";
+import styled from "styled-components";
+import SearchIndex from "../components/SearchIndex";
+import Navbar from "../layouts/Navbar";
+import Footer from "../layouts/Footer";
 
 const PageWrapper = styled.div`
   display: flex;
@@ -22,14 +22,14 @@ const Main = styled.main`
   }
 `;
 
-const App = () => (
+const SearchPage = () => (
   <PageWrapper>
     <Navbar />
     <Main>
-      <BrowseIndex />
+      <SearchIndex />
     </Main>
     <Footer />
   </PageWrapper>
 );
 
-export default App;
+export default SearchPage;

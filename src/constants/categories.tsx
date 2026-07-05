@@ -1,4 +1,4 @@
-const CATEGORIES = [
+export const CATEGORIES = [
   'Cocktail',
   'Shot',
   'Ordinary Drink',
@@ -7,12 +7,4 @@ const CATEGORIES = [
   'Soft Drink / Soda',
   'Beer',
   'Cocoa',
-];
-
-const selectCategories = CATEGORIES.map(category => (
-  <option key={category} value={category}>
-    {category}
-  </option>
-));
-
-export default selectCategories;
+] as const;
