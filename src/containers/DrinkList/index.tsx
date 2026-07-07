@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import axios from "axios";
 import Drink from "../../components/Drink";
 import CategoryFilter from "../../components/CategoryFilter";
+import ErrorPage from "../../pages/ErrorPage";
 import { API_MAIN, API_SEARCH } from "../../constants/api";
 import useCocktailStore from "../../store/cocktailStore";
 import type { Category, Drink as DrinkType } from "../../types";
@@ -34,23 +35,30 @@ const DrinkList = ({ search }: DrinkListProps) => {
     drinkFiltered = drinks.filter((drink) => drink.strCategory === category);
   }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      startDataFetch();
-      try {
-        const result = await axios(`${API_MAIN}${API_SEARCH}${search}`);
-        completeDataFetch(result.data);
-      } catch (error) {
-        failDataFetch();
-      }
-    };
-
-    fetchData();
+  const fetchData = useCallback(async () => {
+    startDataFetch();
+    try {
+      const result = await axios(`${API_MAIN}${API_SEARCH}${search}`);
+      completeDataFetch(result.data);
+    } catch {
+      failDataFetch();
+    }
   }, [search, startDataFetch, completeDataFetch, failDataFetch]);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
   return (
     <>
-      {isError && <Message>Something went wrong. Please try again…</Message>}
+      {isError ? (
+        <ErrorPage
+          error={
+            new Error("Failed to load drinks. Please check your connection.")
+          }
+          onRetry={fetchData}
+        />
+      ) : null}
       {isLoading ? (
         <Message>Loading drinks…</Message>
       ) : (
