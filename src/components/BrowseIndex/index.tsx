@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import Drink from "../Drink";
+import ErrorPage from "../../pages/ErrorPage";
 import { API_MAIN } from "../../constants/api";
 import { CATEGORIES } from "../../constants/categories";
 
@@ -30,22 +31,20 @@ const BrowseIndex = () => {
     isError: false,
   });
 
-  useEffect(() => {
-    const fetchByCategory = async () => {
-      setState((prev) => ({ ...prev, isLoading: true, isError: false }));
-      try {
-        const res = await axios.get(
-          `${API_MAIN}filter.php?c=${activeCategory}`,
-        );
-        const drinks = Array.isArray(res.data.drinks) ? res.data.drinks : [];
-        setState({ drinks, isLoading: false, isError: false });
-      } catch {
-        setState({ drinks: [], isLoading: false, isError: true });
-      }
-    };
-
-    fetchByCategory();
+  const fetchByCategory = useCallback(async () => {
+    setState((prev) => ({ ...prev, isLoading: true, isError: false }));
+    try {
+      const res = await axios.get(`${API_MAIN}filter.php?c=${activeCategory}`);
+      const drinks = Array.isArray(res.data.drinks) ? res.data.drinks : [];
+      setState({ drinks, isLoading: false, isError: false });
+    } catch {
+      setState({ drinks: [], isLoading: false, isError: true });
+    }
   }, [activeCategory]);
+
+  useEffect(() => {
+    fetchByCategory();
+  }, [fetchByCategory]);
 
   return (
     <Section>
@@ -67,9 +66,12 @@ const BrowseIndex = () => {
         ))}
       </CategoryGrid>
 
-      {state.isError && (
-        <Message>Something went wrong. Please try again…</Message>
-      )}
+      {state.isError ? (
+        <ErrorPage
+          error={new Error("Failed to load drinks for this category")}
+          onRetry={fetchByCategory}
+        />
+      ) : null}
       {state.isLoading ? (
         <Message>Loading drinks…</Message>
       ) : (

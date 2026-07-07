@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Navbar from "../../layouts/Navbar";
 import Footer from "../../layouts/Footer";
+import ErrorPage from "../ErrorPage";
 import { API_MAIN, API_DETAIL } from "../../constants/api";
 import useCocktailStore from "../../store/cocktailStore";
 import {
@@ -29,18 +30,19 @@ const DrinkDetailPage = () => {
   const complete = useCocktailStore((s) => s.completeDetailsFetch);
   const fail = useCocktailStore((s) => s.failDetailsFetch);
 
-  useEffect(() => {
-    const fetchDetail = async () => {
-      start();
-      try {
-        const r = await axios(`${API_MAIN}${API_DETAIL}${id}`);
-        complete(r.data);
-      } catch {
-        fail();
-      }
-    };
-    fetchDetail();
+  const fetchDetail = useCallback(async () => {
+    start();
+    try {
+      const r = await axios(`${API_MAIN}${API_DETAIL}${id}`);
+      complete(r.data);
+    } catch {
+      fail();
+    }
   }, [id, start, complete, fail]);
+
+  useEffect(() => {
+    fetchDetail();
+  }, [fetchDetail]);
 
   const ingredients: string[] = [];
   const quantity: string[] = [];
@@ -58,7 +60,12 @@ const DrinkDetailPage = () => {
     <W>
       <Navbar />
       <M>
-        {isError && <Msg>Something went wrong. Please try again…</Msg>}
+        {isError ? (
+          <ErrorPage
+            error={new Error("Failed to load drink details")}
+            onRetry={fetchDetail}
+          />
+        ) : null}
         {isLoading ? (
           <Msg>Loading details…</Msg>
         ) : (

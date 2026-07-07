@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import { CTA, Featured, Grid, Hero, OutlineCTA, Sub, Title } from "./styles";
 import { API_MAIN } from "../../constants/api";
+import ErrorPage from "../ErrorPage";
 import Loading from "../../components/Loading";
 import Drink from "../../components/Drink";
 
@@ -11,8 +12,10 @@ type DrinkState = { loading: boolean; data?: DrinkType };
 
 const LandingPage = () => {
   const [cards, setCards] = useState<DrinkState[]>([]);
+  const [hasError, setHasError] = useState(false);
 
-  useEffect(() => {
+  const fetchCards = useCallback(() => {
+    setHasError(false);
     const initial = Array.from({ length: 6 }, () => ({ loading: true }));
     setCards(initial);
 
@@ -31,9 +34,14 @@ const LandingPage = () => {
           c[index] = { loading: false };
           return c;
         });
+        setHasError(true);
       }
     });
   }, []);
+
+  useEffect(() => {
+    fetchCards();
+  }, [fetchCards]);
 
   return (
     <div>
@@ -49,17 +57,24 @@ const LandingPage = () => {
         </div>
       </Hero>
       <Featured>
-        <Grid>
-          {cards.map((card, i) =>
-            card.loading ? (
-              <Loading key={i} />
-            ) : card.data ? (
-              <Drink key={card.data.idDrink} drink={card.data} large />
-            ) : (
-              <div key={i}>Failed to load</div>
-            ),
-          )}
-        </Grid>
+        {hasError && cards.every((c) => !c.loading && !c.data) ? (
+          <ErrorPage
+            error={new Error("Failed to load featured drinks")}
+            onRetry={fetchCards}
+          />
+        ) : (
+          <Grid>
+            {cards.map((card, i) =>
+              card.loading ? (
+                <Loading key={i} />
+              ) : card.data ? (
+                <Drink key={card.data.idDrink} drink={card.data} large />
+              ) : (
+                <div key={i}>Failed to load</div>
+              ),
+            )}
+          </Grid>
+        )}
       </Featured>
     </div>
   );

@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  ErrorContainer,
-  ErrorMessage,
-  ErrorTitle,
-  RetryButton,
-} from "./styles";
+import ErrorPage from "../../pages/ErrorPage";
 
 interface ErrorBoundaryProps {
   children: React.ReactNode;
@@ -35,19 +30,10 @@ class ErrorBoundary extends React.Component<
 
   render() {
     if (this.state.hasError) {
-      if (this.props.fallback) {
-        return this.props.fallback;
-      }
-
       return (
-        <ErrorContainer>
-          <ErrorTitle>Something went wrong</ErrorTitle>
-          <ErrorMessage>
-            {this.state.error?.message ||
-              "An unexpected error occurred. Please try again."}
-          </ErrorMessage>
-          <RetryButton onClick={this.handleRetry}>Try Again</RetryButton>
-        </ErrorContainer>
+        this.props.fallback ?? (
+          <ErrorPage error={this.state.error} onRetry={this.handleRetry} />
+        )
       );
     }
 
