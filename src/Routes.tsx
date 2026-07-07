@@ -6,6 +6,7 @@ const LandingPage = lazy(() => import("./pages/LandingPage"));
 const BrowsePage = lazy(() => import("./pages/BrowsePage"));
 const SearchPage = lazy(() => import("./pages/SearchPage"));
 const DrinkDetailsPage = lazy(() => import("./pages/DrinkDetailsPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 const LoadingFallback = styled.div`
   display: flex;
@@ -31,6 +32,7 @@ export const Routes = () => (
           <Route path="/" element={<LandingPage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/details/:id" element={<DrinkDetailsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </RouterRoutes>
       </Suspense>
     </ErrorBoundary>
